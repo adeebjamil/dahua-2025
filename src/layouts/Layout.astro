@@ -1,0 +1,102 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { SEO } from 'astro-seo';
+
+export interface Props {
+	title: string;
+	publishedTime?: string;
+	site?: string;
+  meta?:string;
+	sd?: object;
+	ogTitle?: string;
+	siteName?: string;
+	description?: string;
+  lang?:string;
+	image?: {
+		url: string;
+		alt: string;
+	};
+	disableIndexing?: boolean;
+}
+
+const {
+	title,
+  meta,
+  lang="en",
+	siteName,
+	publishedTime,
+	description,
+	site,
+	sd,
+	image,
+	disableIndexing = false,
+} = Astro.props;
+
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    {
+			sd && (
+				<script
+					is:inline
+					type="application/ld+json"
+					set:html={JSON.stringify(sd)}
+				/>
+			)
+		}
+    <SEO
+    title={title ?? "Dahua-Saudi - Top-Rated Authorized CCTV Camera Dealer in Saudi"}
+    description={description ?? "Dahua-Saudi, the leading authorized dealer of CCTV cameras in Saudi Arabia. Offering top-rated security and video surveillance solutions including AI and IP cameras for homes and businesses."}
+    noindex={disableIndexing}
+    nofollow={disableIndexing}
+    openGraph={{
+      basic: {
+        title: title ?? "Dahua-Saudi - Best CCTV Dealer in Saudi",
+        type: "website",
+        image: image?.url ?? "/default-image.jpg",
+      },
+      image: {
+        width: 1200,
+        height: 628,
+        alt: image?.alt ?? "Dahua-Saudi - Best CCTV Cameras in Saudi",
+      },
+      optional: {
+        siteName: siteName ?? "Dahua-Saudi",
+        description: description ?? "Providing trusted and reliable CCTV surveillance solutions with advanced Dahua AI and IP cameras across Saudi Arabia.",
+      },
+      article: {
+        publishedTime: publishedTime ?? new Date().toISOString(),
+      },
+    }}
+    twitter={{
+      card: "summary_large_image",
+      site: site ?? "https://dahua-saudi.com",
+      creator: "@DahuaSaudi",
+      title: title ?? "Dahua-Saudi - Leading CCTV Dealer in Saudi Arabia",
+      description: description ?? "Dahua-Saudi, authorized dealer of Dahua CCTV cameras. Providing top security solutions and surveillance cameras in Saudi.",
+      image: image?.url ?? "/default-twitter-image.jpg",
+      imageAlt: "Dahua-Saudi - CCTV Surveillance Solutions",
+    }}
+  />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="Dahua-Saudi, CCTV cameras, top CCTV dealer, security cameras, AI security, IP cameras, surveillance solutions, video surveillance, best CCTV dealer Saudi, Dahua cameras" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ?? "Dahua-Saudi - Leading Authorized CCTV Camera Dealer in Saudi"}</title>
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <footer>
+      <p>Looking for more solutions? Visit our partner: <a href="https://lovosis.com" target="_blank">Lovosis Technology PVT LTD</a></p>
+    </footer>
+  </body>
+</html>

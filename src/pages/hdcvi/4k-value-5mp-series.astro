@@ -1,0 +1,187 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const products = [
+  {
+    category: "4K Value/5MP Series",
+    items: [
+      {
+        id: "XVR5104C-4KL-I3",
+        name: "4CH Penta-brid 4K Value/5MP Smart 1U 1HDD WizSense Digital Video Recorder",
+        image: "/src/assets/Hdcvi/XVR5104C-4KL-I3.png",
+        features: [
+          "4 Channel Input",
+          "4K Value/5MP Resolution",
+          "Smart 1U Design",
+          "1 HDD Support",
+          "WizSense Technology"
+        ]
+      },
+      {
+        id: "XVR5216A-4KL-I3",
+        name: "16CH Penta-brid 4K Value/5MP 1U 2HDDs WizSense Digital Video Recorder",
+        image: "/src/assets/Hdcvi/XVR5216A-4KL-I3.png",
+        features: [
+          "16 Channel Input",
+          "4K Value/5MP Resolution",
+          "1U Design",
+          "2 HDDs Support",
+          "WizSense Technology"
+        ]
+      },
+      {
+        id: "XVR5108HE-4KL-I3",
+        name: "8CH Penta-brid 4K Value/5MP Mini 1U 1HDD WizSense Digital Video Recorder",
+        image: "/src/assets/Hdcvi/XVR5108HE-4KL-I3.png",
+        features: [
+          "8 Channel Input",
+          "4K Value/5MP Resolution",
+          "Mini 1U Design",
+          "1 HDD Support",
+          "WizSense Technology"
+        ]
+      },
+      {
+        id: "XVR5108H-4KL-I3",
+        name: "8CH Penta-brid 4K Value/5MP Mini 1U 1HDD WizSense Digital Video Recorder",
+        image: "/src/assets/Hdcvi/XVR5108H-4KL-I3.png",
+        features: [
+          "8 Channel Input",
+          "4K Value/5MP Resolution",
+          "Mini 1U Design",
+          "1 HDD Support",
+          "WizSense Technology"  
+        ]
+      },
+      {
+        id: "XVR5108HS-4KL-I3",
+        name: "8CH Penta-brid 4K Value/5MP Compact 1U 1HDD WizSense Digital Video Recorder",
+        image: "/src/assets/Hdcvi/XVR5108HS-4KL-I3.png",
+        features: [
+          "8 Channel Input",
+          "4K Value/5MP Resolution",
+          "Compact 1U Design", 
+          "1 HDD Support",
+          "WizSense Technology"
+        ]
+      }
+    ]
+  }
+];
+---
+
+// Rest of the template code remains exactly the same as your reference,
+// just update the title to:
+<Layout title="4K Value/5MP Series | HDCVI Recorders">
+    <main class="bg-gray-50">
+        <!-- Hero Section -->
+        <section class="relative h-[80vh] flex items-center overflow-hidden">
+          <div class="absolute inset-0">
+            <img 
+              src="/src/assets/Carousel/imag5.jpg" 
+              alt="4K Series"
+              class="w-full h-full object-cover scale-105 transform transition-transform duration-[3s] hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/40 to-purple-900/30"></div>
+          </div>
+          
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center text-white">
+              <h1 class="text-4xl font-bold mb-4">4K Series</h1>
+              <p class="text-lg">High Definition Composite Video Interface</p>
+            </div>
+          </div>
+          
+          <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </div>
+        </section>
+    
+        <!-- Products Section -->
+        <section id="products" class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+          <div class="max-w-7xl mx-auto px-4">
+            {products.map(category => (
+              <div class="mb-16 animate-fade-in">
+                <!-- Category Header -->
+                <div class="text-center mb-8">
+                  <span class="text-sm font-semibold text-blue-600 tracking-wider uppercase mb-2 block">
+                    {category.category}
+                  </span>
+                  <h2 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                    {category.category}
+                  </h2>
+                  <div class="w-12 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-3"></div>
+                </div>
+    
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {category.items.map(product => (
+                    <div class="group relative bg-white/80 backdrop-blur-sm rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      <div class="p-4 relative z-10">
+                        <!-- Product Image -->
+                        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-3 mb-4">
+                          <img 
+                            src={product.image} 
+                            alt={product.name}
+                            class="w-full h-36 object-contain transform group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+    
+                        <!-- Product Name and ID -->
+                        <div class="mb-3">
+                          <h3 class="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                            {product.name}
+                          </h3>
+                          <p class="font-mono text-sm text-blue-500 mt-1">Model: {product.id}</p>
+                        </div>
+    
+                        <!-- Features List -->
+                        <ul class="space-y-1.5 mb-4 text-sm">
+                          {product.features.map(feature => (
+                            <li class="flex items-center text-gray-600">
+                              <span class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 mr-2">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                              </span>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+    
+                        <!-- Learn More Button -->
+                        <a 
+                          href={`/products/${product.id}`}
+                          class="group inline-flex items-center justify-center w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
+                        >
+                          <span class="relative z-10">Learn More</span>
+                          <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+</style>
+  

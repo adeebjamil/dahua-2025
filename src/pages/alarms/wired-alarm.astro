@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Wired Alarm">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container mx-auto px-4 py-20">
+      <img 
+        src="/src/assets/alarm/heroimg.jpg" 
+        alt="Wireless Alarm Systems" 
+        class="w-full h-[400px] object-conatin rounded-lg shadow-lg"
+      >
+  </section>
+
+  <!-- Overview Section -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">Overview</h2>
+      <div class="max-w-4xl mx-auto space-y-6 text-gray-700">
+        <p>The Dahua Wired Security System delivers robust and reliable protection through hardwired connections. With advanced integration capabilities and stable performance, it's the perfect choice for permanent security installations.</p>
+        <p>Built for reliability and consistent performance, our wired alarm systems offer seamless integration with CCTV/VDP systems, providing comprehensive security solutions for homes and businesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <video controls class="w-full rounded-lg shadow-lg">
+          <source src="/src/assets/alarm/wired-overview.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation Section -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">Our Innovation</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Innovation Item 1 -->
+        <div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img src="/src/assets/alarm/wired-innovation1.jpg" alt="Stable Connection Technology" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0 md:mr-4">
+          <div class="text-gray-700">
+            <h3 class="text-2xl font-semibold mb-3">Stable Connection Technology</h3>
+            <p>Hardwired connections ensure reliable signal transmission without interference, providing consistent performance and eliminating the need for battery replacements.</p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img src="/src/assets/alarm/wired-innovation1.jpg" alt="Stable Connection Technology" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0 md:mr-4">
+          <div class="text-gray-700">
+            <h3 class="text-2xl font-semibold mb-3">Stable Connection Technology</h3>
+            <p>Hardwired connections ensure reliable signal transmission without interference, providing consistent performance and eliminating the need for battery replacements.</p>
+          </div>
+        </div><div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img src="/src/assets/alarm/wired-innovation1.jpg" alt="Stable Connection Technology" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0 md:mr-4">
+          <div class="text-gray-700">
+            <h3 class="text-2xl font-semibold mb-3">Stable Connection Technology</h3>
+            <p>Hardwired connections ensure reliable signal transmission without interference, providing consistent performance and eliminating the need for battery replacements.</p>
+          </div>
+        </div><div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img src="/src/assets/alarm/wired-innovation1.jpg" alt="Stable Connection Technology" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0 md:mr-4">
+          <div class="text-gray-700">
+            <h3 class="text-2xl font-semibold mb-3">Stable Connection Technology</h3>
+            <p>Hardwired connections ensure reliable signal transmission without interference, providing consistent performance and eliminating the need for battery replacements.</p>
+          </div>
+        </div>
+       
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero-section img {
+      @apply w-full h-[400px] object-cover rounded-lg shadow-lg;
+    }
+
+    .product-card {
+      @apply bg-white rounded-xl shadow-md transition-all duration-300 hover:shadow-2xl overflow-hidden;
+    }
+
+    .learn-more-btn {
+      @apply inline-flex items-center px-6 py-2.5 rounded-lg bg-red-600 text-white 
+        hover:bg-red-700 transition-colors duration-300 transform hover:scale-105;
+    }
+
+    /* ... rest of the styles with red color scheme ... */
+  </style>
+
+  <!-- Same scripts as wireless-alarm.astro but with updated selectors if needed -->
+
+
+</Layout>

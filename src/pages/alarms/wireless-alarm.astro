@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Wireless Alarm">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container mx-auto px-4 py-20">
+      <img 
+        src="/src/assets/alarm/heroimg.jpg" 
+        alt="Wireless Alarm Systems" 
+        class="w-full h-[400px] object-cover rounded-lg shadow-lg"
+      >
+  </section>
+
+  <!-- Overview Section -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">Overview</h2>
+      <div class="max-w-4xl mx-auto space-y-6 text-gray-700">
+        <p>The Dahua AirShield Wireless Security System consists of alarm hubs, various wireless peripherals and several applications for end users, installers and ARCs.</p>
+        <p>In order to optimize user experience, reduce installation and maintenance costs, and improve the operational efficiency of security companies, the Dahua wireless alarm has continued to innovate technologically, providing advanced image transmission technology, integrated IPC as detector, and flexible interconnection with CCTV/VDP.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <video controls class="w-full rounded-lg shadow-lg">
+          <source src="/src/assets/alarm/overview-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation Section -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">Our Innovation</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Innovation Item 1 -->
+        <div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img src="/src/assets/alarm/innovation1.jpg" alt="Advanced Image Transmission Technology" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0 md:mr-4">
+          <div class="text-gray-700">
+            <h3 class="text-2xl font-semibold mb-3">Advanced Image Transmission Technology</h3>
+            <p>The RF-HD image transmission protocol ensures that high-resolution alarm videos corresponding to alarm events are received immediately, helping you verify the authenticity of alarms or preserve them as evidence. It supports 2.4GHz, 433MHz and 868MHz bands, making it suitable to various application scenarios.</p>
+          </div>
+        </div>
+        <!-- Innovation Item 2 -->
+        <div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-gray-700 md:mr-4">
+            <h3 class="text-2xl font-semibold mb-3">2.4GHz</h3>
+            <p>It can transmit 6 images within 6 seconds with resolution of up to 1,600*1,200 (the resolution and number of images can be selected). The transmission distance is up to 300 meters (open space), which is suitable for indoor scenes.</p>
+          </div>
+          <img src="/src/assets/alarm/innovation2.jpg" alt="2.4GHz" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0">
+        </div>
+        <!-- Innovation Item 3 -->
+        <div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img src="/src/assets/alarm/innovation3.jpg" alt="433MHz/868MHz" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0 md:mr-4">
+          <div class="text-gray-700">
+            <h3 class="text-2xl font-semibold mb-3">433MHz/868MHz</h3>
+            <p>It can transmit 6 images within 12 seconds with resolution of up to 1,200*960 (the resolution and number of images can be selected). The transmission distance is up to 1,400 meters (open space), which is ideal for outdoor scenes.</p>
+          </div>
+        </div>
+        <!-- Innovation Item 4 -->
+        <div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-gray-700 md:mr-4">
+            <h3 class="text-2xl font-semibold mb-3">Integrated IPC as a Visual Detector</h3>
+            <p>User can integrate the IPC as a visual detector to alarm hub when they are on the same LAN. They can also configure the linkage rules between the IPC and the detector connected to the alarm hub.</p>
+          </div>
+          <img src="/src/assets/alarm/innovation4.jpg" alt="Integrated IPC as a Visual Detector" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0">
+        </div>
+        <!-- Innovation Item 5 -->
+        <div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img src="/src/assets/alarm/innovation5.jpg" alt="Receive IPC alarm events and video recordings" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0 md:mr-4">
+          <div class="text-gray-700">
+            <h3 class="text-2xl font-semibold mb-3">Receive IPC alarm events and video recordings</h3>
+            <p>After logging into the IPC web and configuring SMD or IVS rules, the alarm hub will receive IPC alarm events and corresponding recordings, and activate the siren.</p>
+          </div>
+        </div>
+        <!-- Innovation Item 6 -->
+        <div class="flex flex-col md:flex-row items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-gray-700 md:mr-4">
+            <h3 class="text-2xl font-semibold mb-3">Detector alarm and IPC video linkage</h3>
+            <p>Configure the detector alarm and IPC video linkage channel on the mobile app. When detector is triggered, the corresponding IPC will record a video.</p>
+          </div>
+          <img src="/src/assets/alarm/innovation6.jpg" alt="Detector alarm and IPC video linkage" class="w-full md:w-1/2 rounded-lg shadow-lg mb-4 md:mb-0">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <style>
+    .filter-btn.active {
+      @apply bg-blue-800 transform scale-105;
+    }
+    
+    .product-card {
+      @apply transform transition-all duration-300 hover:-translate-y-1;
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const productCards = document.querySelectorAll('.product-card');
+  
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.getAttribute('data-category');
+          
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+  
+          productCards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              (card as HTMLElement).style.display = 'block';
+              setTimeout(() => (card as HTMLElement).style.opacity = '1', 10);
+            } else {
+              (card as HTMLElement).style.opacity = '0';
+              setTimeout(() => (card as HTMLElement).style.display = 'none', 300);
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .hero-section img {
+      @apply w-full h-[400px] object-cover rounded-lg shadow-lg;
+    }
+
+    .product-card {
+      @apply bg-white rounded-xl shadow-md transition-all duration-300 hover:shadow-2xl overflow-hidden;
+    }
+
+    .learn-more-btn {
+      @apply inline-flex items-center px-6 py-2.5 rounded-lg bg-blue-600 text-white 
+        hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105;
+    }
+
+    .scenario-card {
+      @apply relative transition-all duration-300 hover:shadow-xl rounded-lg cursor-pointer overflow-hidden;
+    }
+
+    .scenario-overlay {
+      @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent
+        opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-end;
+    }
+
+    .scenario-card:hover .scenario-overlay {
+      @apply opacity-100;
+    }
+
+    .scenario-card img {
+      @apply transition-transform duration-300;
+    }
+
+    .scenario-card:hover img {
+      @apply transform scale-105;
+    }
+
+    .filter-btn.active {
+      @apply bg-blue-800;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const productCards = document.querySelectorAll('.product-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.getAttribute('data-category');
+
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          productCards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              (card as HTMLElement).style.display = 'block';
+            } else {
+              (card as HTMLElement).style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</Layout>

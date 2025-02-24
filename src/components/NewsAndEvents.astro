@@ -1,0 +1,104 @@
+---
+import newsImg1 from '/src/assets/NewsAndEvents/img1.png';
+import newsImg2 from '/src/assets/NewsAndEvents/img2.jpg';
+import newsImg3 from '/src/assets/NewsAndEvents/img3.png';
+
+const newsEvents = [
+  {
+    title: "Dahua Security AI Solutions Summit 2024",
+    date: "March 15, 2024",
+    description: "Experience the future of security with Dahua's latest AI-powered solutions at our annual summit in Riyadh.",
+    image: newsImg1,
+    category: "Event",
+    link: "/events/security-ai-summit-2024"
+  },
+  {
+    title: "New WizMind 2.0 Technology Launch",
+    date: "March 10, 2024",
+    description: "Introducing WizMind 2.0: Our next-generation AI technology with enhanced perimeter protection and facial recognition.",
+    image: newsImg2,
+    category: "News",
+    link: "/events/wizmind-2-launch"
+  },
+  {
+    title: "Dahua Certification Workshop",
+    date: "March 20, 2024",
+    description: "Join our comprehensive training program for security professionals on Dahua's latest surveillance systems.",
+    image: newsImg3,
+    category: "Event",
+    link: "/events/certification-workshop"
+  }
+];
+---
+
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-5xl font-bold text-center text-gray-900 mb-16 animate-fade-in">
+      News & Events
+      <span class="block w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-4"></span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {newsEvents.map((item, index) => (
+        <a 
+          href={item.link}
+          class="group bg-white shadow-lg rounded-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20"
+          style={`animation-delay: ${index * 200}ms`}
+        >
+          <div class="relative h-[250px] overflow-hidden">
+            <img 
+              src={item.image.src} 
+              alt={item.title}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute top-4 left-4 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+              {item.category}
+            </div>
+          </div>
+
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span class="ml-2 text-blue-400">{item.date}</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-400 transition-colors duration-300">
+              {item.title}
+            </h3>
+            
+            <p class="text-gray-600 mb-6 line-clamp-2">
+              {item.description}
+            </p>
+
+            <div class="inline-flex items-center px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .grid > div {
+    opacity: 0;
+    animation: fade-in 0.8s ease-out forwards;
+  }
+</style>

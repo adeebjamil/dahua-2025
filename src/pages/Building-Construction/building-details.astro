@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Residential Building Solutions">
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        src="https://source.unsplash.com/1600x900/?residential,modern" 
+        alt="Modern Residential Buildings" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+    </div>
+    
+    <div class="relative container mx-auto px-4 text-center text-white">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fade-in">
+        Critical Infrastructure
+      </h1>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg">
+          <p class="text-gray-700 leading-relaxed mb-12">
+            With the onset of rapid urbanization, residential areas have emerged as the center of our lives and as the place where families spend most of their time together. However, new developments in modern society such as increasing safety consciousness, widespread vehicle usage, higher requirements on convenience and comfort of living environment, etc., have posed new challenges to traditional residential configurations.
+          </p>
+          
+          <!-- Download Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a 
+              href="#" 
+              class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Download Brochure
+            </a>
+            <a 
+              href="#" 
+              class="inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-300"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              Download Video
+            </a>
+          </div>
+
+          <!-- Solution Overview -->
+          <div class="space-y-6">
+            <h2 class="text-3xl font-bold text-center">Solution Overview</h2>
+            <div class="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
+              <img 
+                src="/src/assets/building-details.png" 
+                alt="Solution Overview" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out both;
+  }
+
+  .prose {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

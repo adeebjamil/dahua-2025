@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+const title = "Leading Distributor of Dahua Computing Solutions in Saudi Arabia – High-Performance Edge Computing & AI-Driven Systems"
+const description = "As a top distributor of Dahua computing solutions in Saudi Arabia, we provide cutting-edge technology that powers smart surveillance and AI-driven applications. Our comprehensive range includes high-performance edge computing systems, AI servers, and cloud solutions designed to support intelligent video analytics and large-scale data processing. With a focus on enhancing system efficiency and scalability, Dahua computing solutions deliver real-time processing for advanced video surveillance, smart city initiatives, and industrial automation. Whether you need AI-powered analytics, reliable cloud infrastructure, or robust edge computing, our Dahua products offer seamless integration and top-tier performance for all your computing needs. Empower your operations with the latest in computing technology from Dahua."
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <div class="relative h-[400px] w-full overflow-hidden mt-10">
+    <Image
+      src="/src/assets/Wireless/heroimg1.png" 
+      alt="Computing Solutions"
+      class="w-full h-full object-cover brightness-75"
+      width={1920}
+      height={400}
+    />
+    <div class="absolute inset-0 flex items-center justify-center">
+     
+    </div>
+  </div>
+
+  <!-- Overview Section -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-4xl font-bold text-center mb-12">Overview</h2>
+    <div class="space-y-8">
+      <p class="text-lg leading-relaxed text-gray-700">
+        Based on powerful computing performance and combined with machine learning algorithms for various industries, 
+        Dahua's intelligent computing devices provide various products (including IVS, IVSS, etc.) that cover edge computing 
+        and central computing, making it suitable for smart city, smart building, smart retail and other diverse scenarios.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+        <div class="bg-gradient-to-br from-white to-blue-50 rounded-lg p-8 shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Intelligent Video Server (IVS)</h3>
+          <p class="text-gray-600">
+            The IVS is equipped with professional graphics computing cards that provide image processing, 
+            algorithm computing, and machine learning. It offers AI computing services to customers with 
+            its powerful data processing and computing capabilities.
+          </p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-white to-blue-50 rounded-lg p-8 shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Intelligent Video Surveillance Server (IVSS)</h3>
+          <p class="text-gray-600">
+            The IVSS is a video storage device that combines professional AI algorithm carriers and offers 
+            powerful and scalable computing capabilities, supporting intelligent recognition and various AI algorithms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">Products</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- IVS Product Card -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
+          <div class="p-8">
+            <Image
+              src="/images/ivs-server.png"
+              alt="Intelligent Video Server"
+              width={400}
+              height={300}
+              class="mx-auto mb-6"
+            />
+            <h3 class="text-2xl font-semibold mb-4 text-center">Intelligent Video Server</h3>
+            <div class="text-center">
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- IVSS Product Card -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
+          <div class="p-8">
+            <Image
+              src="/images/ivss-server.png"
+              alt="Intelligent Video Surveillance Server"
+              width={400}
+              height={300}
+              class="mx-auto mb-6"
+            />
+            <h3 class="text-2xl font-semibold mb-4 text-center">Intelligent Video Surveillance Server</h3>
+            <div class="text-center">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

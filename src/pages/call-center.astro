@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Call Center">
+  <!-- Support Channels -->
+  <section class="py-20 mt-20 ">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "📞",
+            title: "Call Support",
+            status: "Available",
+            description: "24/7 Phone Support",
+            action: "Call Now",
+            color: "bg-green-500"
+          },
+          {
+            icon: "💬",
+            title: "Live Chat",
+            status: "Online",
+            description: "Instant Messaging",
+            action: "Start Chat",
+            color: "bg-blue-500"
+          },
+          {
+            icon: "✉️",
+            title: "Email Support",
+            status: "24h Response",
+            description: "Detailed Assistance",
+            action: "Send Email",
+            color: "bg-purple-500"
+          }
+        ].map(channel => (
+          <div class="support-card group">
+            <div class="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div class={`absolute -top-4 -right-4 w-20 h-20 ${channel.color} rounded-2xl rotate-12 group-hover:rotate-45 transition-transform duration-300`}></div>
+              <div class="relative">
+                <div class="text-4xl mb-4">{channel.icon}</div>
+                <h3 class="text-xl font-bold mb-2">{channel.title}</h3>
+                <div class="flex items-center gap-2 mb-4">
+                  <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  <span class="text-sm text-gray-600">{channel.status}</span>
+                </div>
+                <p class="text-gray-600 mb-6">{channel.description}</p>
+                <button class="w-full py-3 bg-gray-50 text-gray-900 rounded-xl font-semibold group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                  {channel.action}
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+<!-- Support Features -->
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Global Support Network</h2>
+        <p class="text-xl text-gray-600">Available in multiple languages across different time zones</p>
+      </div>
+  
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Support Stats -->
+        <div class="grid grid-cols-2 gap-6">
+          {[
+            { number: "99.9%", label: "Uptime", icon: "⚡" },
+            { number: "<2min", label: "Response Time", icon: "⏱" },
+            { number: "150+", label: "Support Experts", icon: "👥" },
+            { number: "24/7", label: "Availability", icon: "🌍" }
+          ].map(stat => (
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+              <div class="text-3xl mb-2">{stat.icon}</div>
+              <div class="text-3xl font-bold text-blue-600">{stat.number}</div>
+              <div class="text-gray-600">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+  
+      <!-- Support Statistics -->
+<div class="relative">
+  <div class="bg-white rounded-2xl shadow-lg p-8 h-full">
+    <h3 class="text-2xl font-bold text-gray-900 mb-8">Global Support Impact</h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Support Resolution Rate -->
+      <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 p-6 text-white">
+        <div class="absolute top-0 right-0 -mt-4 -mr-4">
+          <svg class="w-24 h-24 opacity-10" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h4 class="text-3xl font-bold mb-2">98%</h4>
+        <p class="text-blue-100">Resolution Rate</p>
+      </div>
+
+      <!-- Average Response Time -->
+      <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-green-500 to-green-600 p-6 text-white">
+        <div class="absolute top-0 right-0 -mt-4 -mr-4">
+          <svg class="w-24 h-24 opacity-10" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h4 class="text-3xl font-bold mb-2">{'<2h'}</h4>
+        <p class="text-green-100">Response Time</p>
+      </div>
+
+      <!-- Global Coverage -->
+      <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 p-6 text-white">
+        <div class="absolute top-0 right-0 -mt-4 -mr-4">
+          <svg class="w-24 h-24 opacity-10" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h4 class="text-3xl font-bold mb-2">150+</h4>
+        <p class="text-purple-100">Countries Covered</p>
+      </div>
+    </div>
+
+    <!-- Support Features -->
+    <div class="grid grid-cols-2 gap-4 mt-8">
+      <div class="flex items-center gap-3">
+        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span class="text-gray-600">24/7 Support</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        <span class="text-gray-600">Multi-lingual Teams</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+        </svg>
+        <span class="text-gray-600">Live Chat Support</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+        </svg>
+        <span class="text-gray-600">Technical Expertise</span>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .support-card {
+    opacity: 0;
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

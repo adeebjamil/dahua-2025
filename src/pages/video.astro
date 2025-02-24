@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Video Gallery">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 to-blue-900 py-20">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-white text-center mb-8">Video Gallery</h1>
+      <div class="max-w-xl mx-auto">
+        <div class="relative">
+          <input 
+            type="search" 
+            placeholder="Search videos..." 
+            class="w-full px-6 py-4 bg-white/10 backdrop-blur-md rounded-full text-white placeholder-gray-400 border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button class="absolute right-4 top-1/2 -translate-y-1/2">
+            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Categories -->
+  <section class="py-8 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="flex overflow-x-auto gap-4 pb-4">
+        {['All Videos', 'Product Tutorials', 'Installation Guides', 'Tech Updates', 'Case Studies'].map(category => (
+          <button class="px-6 py-2 bg-white rounded-full shadow-sm hover:shadow-md transition-all whitespace-nowrap">
+            {category}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Grid -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Network Camera Installation Guide",
+            thumbnail: "/videos/thumbnails/install-guide.jpg",
+            duration: "15:24",
+            views: "2.5K",
+            date: "2024-01-15",
+            videoUrl: "https://www.youtube.com/embed/VIDEO_ID_1"
+          },
+          {
+            title: "HDCVI System Setup Tutorial",
+            thumbnail: "/videos/thumbnails/hdcvi-setup.jpg",
+            duration: "08:45",
+            views: "1.8K",
+            date: "2024-01-10",
+            videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2"
+          },
+          {
+            title: "Smart IoT Solutions Overview",
+            thumbnail: "/videos/thumbnails/iot-overview.jpg",
+            duration: "12:30",
+            views: "3.2K",
+            date: "2024-01-05",
+            videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3"
+          }
+        ].map(video => (
+          <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+            <div class="relative">
+              <img 
+                src={video.thumbnail} 
+                alt={video.title}
+                class="w-full aspect-video object-cover"
+              />
+              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <button 
+                  class="p-4 bg-white/20 rounded-full backdrop-blur-sm transform hover:scale-110 transition-transform"
+                  onclick={`openVideo('${video.videoUrl}')`}
+                >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </button>
+              </div>
+              <span class="absolute bottom-2 right-2 px-2 py-1 bg-black/70 text-white text-sm rounded">
+                {video.duration}
+              </span>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-2">{video.title}</h3>
+              <div class="flex items-center justify-between text-sm text-gray-600">
+                <span>{video.views} views</span>
+                <span>{new Date(video.date).toLocaleDateString()}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="fixed inset-0 bg-black/90 hidden z-50">
+    <div class="absolute top-4 right-4">
+      <button onclick="closeVideo()" class="text-white hover:text-gray-300">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="container mx-auto px-4 h-full flex items-center justify-center">
+      <div class="w-full max-w-4xl aspect-video">
+        <iframe id="videoPlayer" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function openVideo(url: string) {
+    const videoModal = document.getElementById('videoModal');
+    if (videoModal !== null) {
+      videoModal.classList.remove('hidden');
+    }
+    const videoPlayer = document.getElementById('videoPlayer');
+    if (videoPlayer !== null && videoPlayer instanceof HTMLIFrameElement) {
+      videoPlayer.src = url;
+    }
+  }
+
+  function closeVideo() {
+    const videoModal = document.getElementById('videoModal');
+    if (videoModal !== null) {
+      videoModal.classList.add('hidden');
+    }
+    const videoPlayer = document.getElementById('videoPlayer');
+    if (videoPlayer !== null && videoPlayer instanceof HTMLIFrameElement) {
+      videoPlayer.src = '';
+    }
+  }
+</script>
+
+<style>
+  /* Custom scrollbar for categories */
+  ::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+</style>

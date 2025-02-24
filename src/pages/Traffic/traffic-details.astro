@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Road Traffic Details">
+<!-- Hero Section with Parallax -->
+<div class="relative h-[80vh] overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/src/assets/explosion-proof/heroimg.jpg"
+        alt="Explosion-Proof & Anti-Corrosion Solutions"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40"
+      >
+      </div>
+    </div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="text-white max-w-4xl px-8">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          Explosion-Proof & Anti-Corrosion Solutions
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200">
+          Advanced Protection for Hazardous Environments
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg">
+          <p class="text-gray-700 leading-relaxed mb-8">
+            As a system that has been proven to save lives, the Intelligent Traffic System (ITS) is widely deployed in cities worldwide. The traffic enforcement system is an important component of ITS, not only helping drivers to strengthen their awareness when driving, but also generating additional revenue from fines to help finance a sustainable, growing, and well-maintained enforcement system.
+          </p>
+          <p class="text-gray-700 leading-relaxed mb-12">
+            The Dahua Road Safety Enforcement Solution is a unique and comprehensive suite of tools which can detect multiple traffic violations in order to improve road efficiency and safety.
+          </p>
+          
+          <!-- Download Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a 
+              href="#" 
+              class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Download Brochure
+            </a>
+            <a 
+              href="#" 
+              class="inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-300"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              Download Video
+            </a>
+          </div>
+
+          <!-- Solution Overview Image -->
+          <div class="rounded-xl overflow-hidden shadow-xl">
+            <img 
+              src="/src/assets/traffic.png" 
+              alt="Solution Overview" 
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out both;
+  }
+  
+  .animate-fade-in-delay {
+    animation: fadeIn 1s ease-out 0.3s both;
+  }
+
+  .prose {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

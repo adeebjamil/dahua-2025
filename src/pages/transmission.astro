@@ -1,0 +1,362 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = "Top Distributor of Dahua Transmission Solutions in Saudi Arabia – Advanced PoE & ePoE Network Systems";
+const description = "As the leading wholesale distributor of Dahua transmission solutions in Saudi Arabia, we offer cutting-edge network infrastructure products tailored for superior video surveillance performance. Our range includes PoE and ePoE switches, cloud-managed systems, and wireless devices designed to optimize CCTV installations with advanced delay management and efficient power delivery. With Dahua’s industry-leading ePoE technology, achieving long-range 800m transmission is easier, reducing installation costs and complexity. Whether you're securing residential, commercial, or industrial spaces, our innovative Dahua solutions provide unmatched reliability and performance for seamless surveillance transmission across all networks."
+---
+<style>
+  .hero {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    width: 90%;
+    max-width: 800px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content .subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 1.5s ease-in-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    opacity: 0;
+    animation: fade-in 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .overview-container {
+    padding: 6rem 2rem;
+    background: #f8f9fa;
+  }
+
+  .overview-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .overview-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  .products {
+    padding: 6rem 2rem;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 3rem auto;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .product-card-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .key-technologies {
+    background: linear-gradient(135deg, #f6f9fc 0%, #edf2f7 100%);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tech-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  }
+
+  .tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #67b26f);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .tech-card:hover::before {
+    opacity: 1;
+  }
+
+  .tech-card img {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .tech-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .tech-card h3 {
+    font-size: 1.8rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+  }
+
+  .tech-card p {
+    color: #4a5568;
+    line-height: 1.7;
+    font-size: 1.1rem;
+  }
+
+  .tech-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(74, 144, 226, 0.1);
+    color: #4a90e2;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .tech-card {
+      padding: 2rem 1.5rem;
+    }
+    
+    .tech-card img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+</style>
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <img src="/src/assets/transmission/heroimg.png" alt="Transmission Solutions Header" class="hero-image">
+      <div class="hero-content">
+        <h1 class="animate-fade-in">Transmission Solutions</h1>
+        <p class="subtitle animate-fade-in-delay">Powering Next-Generation Network Connectivity</p>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-container">
+      <div class="overview-content">
+        <div>
+          <h2 class="section-title">Why Choose Dahua</h2>
+          <div class="underline gradient"></div>
+          <p class="overview-text">
+            As a world-leading provider of advanced video surveillance solutions, Dahua Technology brings unparalleled expertise to network infrastructure. Our specialized IP CCTV networks deliver superior performance in delay management and packet handling, setting new standards in video streaming technology.
+          </p>
+        </div>
+        <img src="/src/assets/transmission/img4.png" alt="Dahua Overview" class="overview-image">
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products">
+      <div class="section-header modern">
+        <h1 class="section-title text-5xl font-bold bg-gradient text-center">Our Solutions</h1>
+        <div class="underline gradient"></div>
+      </div>
+      <div class="products-grid">
+        {[
+          {
+            title: "PoE Switches",
+            image: "/src/assets/transmission/img1.png",
+          },
+          {
+            title: "Cloud Managed Switches",
+            image: "/src/assets/transmission/img2.png",
+          },
+          {
+            title: "IT Channel Products",
+            image: "/src/assets/transmission/img3.png",
+          },
+          {
+            title: "ePoE Switches",
+            image: "/src/assets/transmission/img4.png",
+          },
+          {
+            title: "Access Switches",
+            image: "/src/assets/transmission/img5.png",
+          },
+          {
+            title: "Aggregation Switches",
+            image: "/src/assets/transmission/img6.png",
+          },
+          {
+            title: "Core Switches",
+            image: "/src/assets/transmission/img7.png",
+          },
+          {
+            title: "Wireless Devices",
+            image: "/src/assets/transmission/img8.png",
+          },
+          {
+            title: "Accessories",
+            image: "/src/assets/transmission/img9.png",
+          },
+        ].map((product) => (
+          <div class="product-card">
+            <img src={product.image} alt={product.title} />
+            <div class="product-card-content">
+              <h3>{product.title}</h3>
+              <button class="btn-primary">Explore</button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Key Technologies -->
+    <section class="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      <!-- Animated background elements -->
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-[url('/patterns/circuit.svg')] opacity-10 animate-pulse"></div>
+        <div class="absolute top-0 left-1/4 w-72 h-72 bg-blue-500/30 rounded-full filter blur-3xl animate-blob"></div>
+        <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-purple-500/30 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
+            Advanced Technologies
+          </h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Tech Cards Grid -->
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <!-- PoE 2.0 Card -->
+          <div class="group relative bg-white/10 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 border border-white/10 hover:border-white/20 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="mb-8 transform group-hover:scale-110 transition-transform duration-500">
+                <img 
+                  src="/src/assets/transmission/img11.png" 
+                  alt="PoE 2.0 Technology" 
+                  class="w-24 h-24 object-contain mx-auto"
+                />
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">
+                PoE 2.0 Technology
+              </h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">
+                Next-generation Power over Ethernet technology, optimized for surveillance systems with enhanced power delivery and management.
+              </p>
+              <span class="inline-flex items-center px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
+                Industry Leading
+                
+              </span>
+            </div>
+          </div>
+
+          <!-- ePoE Card -->
+          <div class="group relative bg-white/10 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 border border-white/10 hover:border-white/20 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10">
+              <div class="mb-8 transform group-hover:scale-110 transition-transform duration-500">
+                <img 
+                  src="/src/assets/transmission/img12.png" 
+                  alt="ePoE Technology" 
+                  class="w-24 h-24 object-contain mx-auto"
+                />
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">
+                ePoE Technology
+              </h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">
+                Extended PoE technology enabling 800m long-range transmission, dramatically reducing infrastructure costs and complexity.
+              </p>
+              <span class="inline-flex items-center px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium">
+                Advanced Solution
+                
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

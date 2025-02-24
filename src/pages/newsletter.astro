@@ -1,0 +1,67 @@
+
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Subscribe to Our Newsletter">
+  <main class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+    <div class="container mx-auto px-4 py-20">
+      <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl">
+        <h1 class="text-5xl font-bold text-white mb-6 text-center">
+          Stay Ahead of the Curve
+        </h1>
+        <p class="text-xl text-white/90 text-center mb-12">
+          Join our newsletter and get weekly insights on the latest tech trends, design inspiration, and exclusive updates.
+        </p>
+        
+        <form class="space-y-6" onsubmit="event.preventDefault()">
+          <div class="flex flex-col md:flex-row gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-1 px-6 py-4 rounded-full bg-white/20 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 transition"
+            />
+            <button
+              class="px-8 py-4 bg-white text-purple-600 rounded-full font-bold hover:bg-opacity-90 transition transform hover:scale-105"
+            >
+              Subscribe Now
+            </button>
+          </div>
+        </form>
+
+        <div class="mt-16">
+          <p class="text-white/80 text-center mb-6">Trusted by innovative teams worldwide</p>
+          <div class="flex justify-center items-center gap-8 flex-wrap">
+            <div class="w-16 h-16 bg-white/20 rounded-full animate-pulse"></div>
+            <div class="w-16 h-16 bg-white/20 rounded-full animate-pulse delay-100"></div>
+            <div class="w-16 h-16 bg-white/20 rounded-full animate-pulse delay-200"></div>
+          </div>
+        </div>
+
+        <div class="mt-12 border-t border-white/20 pt-8">
+          <div class="flex flex-col gap-4 text-center">
+            <p class="text-white/90">✨ Weekly curated insights</p>
+            <p class="text-white/90">🔒 No spam, unsubscribe anytime</p>
+            <p class="text-white/90">🎯 Tailored to your interests</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+</style>

@@ -1,0 +1,188 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { products } from '../../lib/products';
+
+export function getStaticPaths() {
+  return products.map(product => ({
+    params: { slug: product.id }
+  }));
+}
+
+const { slug } = Astro.params;
+const product = products.find(p => p.id === slug);
+
+if (!product) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={product.name}>
+  <section class="py-20 bg-gradient-to-b from-blue-50 to-white animate-fadeIn">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Back Button -->
+        <a 
+          href="http://localhost:4321/network-cameras/WizMind-Series" 
+          class="inline-flex items-center mb-8 text-blue-600 hover:text-blue-700 group"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span class="font-medium">Back to Products</span>
+        </a>
+
+        <!-- Product Header -->
+        <h1 class="text-5xl font-bold text-gray-900 mb-4 tracking-tight">{product.id}</h1>
+        <h2 class="text-4xl font-semibold text-gray-800 mb-6 leading-tight">{product.name}</h2>
+        
+        <!-- Categories -->
+        <div class="flex flex-wrap gap-3 mb-12">
+          <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium transition-all hover:scale-105 hover:shadow-md">
+            {product.category}
+          </span>
+          <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-full text-sm font-medium transition-all hover:scale-105 hover:shadow-md">
+            {product.subCategory}
+          </span>
+        </div>
+
+        <!-- Product Content -->
+        <div class="grid lg:grid-cols-2 gap-12 mb-12">
+          <!-- Image Gallery -->
+          <div class="space-y-6">
+            <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white mt-10">
+              <img 
+                src={product.image} 
+                alt={product.name}
+                class="w-full h-[400px] object-contain transform hover:scale-105 transition-all duration-500"
+              />
+            </div>
+
+            <div class="rounded-xl overflow-hidden">
+              <img 
+                src={product.additionalImage} 
+                alt="Additional Product View"
+                class="w-full h-[200px] object-contain"
+              />
+            </div>
+
+
+          </div>
+          
+        <!-- Product Description -->
+<div class="space-y-6 p-6 rounded-2xl ">
+  <h3 class="text-2xl font-bold text-gray-900 mb-4">Product Specifications</h3>
+  <div class="space-y-3">
+    {product.description.split('\n').filter(line => line.trim()).map((line) => (
+      <div class="flex items-start group">
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-500 mt-2.5 mr-3 group-hover:scale-110 transition-transform"></span>
+        <p class="text-gray-700 text-lg leading-relaxed group-hover:text-gray-900 transition-colors">
+          {line.replace('•', '').trim()}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+      
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Download Button -->
+    <div class="flex items-center justify-center my-16">
+      <a 
+        href={product.brochure} 
+        download="product-brochure.pdf"
+        class="group inline-flex items-center px-8 py-4 text-lg font-medium text-white 
+               bg-gradient-to-r from-blue-600 to-blue-500
+               rounded-full transform transition-all duration-500
+               hover:shadow-[0_0_30px_rgba(37,_99,_235,_0.8)]
+               active:bg-gradient-to-r active:from-green-600 active:to-green-500
+               active:scale-95 outline-none
+               animate-glow"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="h-6 w-6 mr-3 transform group-hover:-translate-y-1 transition-transform duration-300" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          />
+        </svg>
+        <span class="relative group-hover:-translate-y-1 transition-transform duration-300">
+          Download Brochure
+        </span>
+      </a>
+    </div>
+
+
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+  .animate-pulse {
+    animation: pulse 2s infinite;
+  }
+
+
+  @keyframes glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+    }
+    50% { 
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.8);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s infinite;
+  }
+
+  .animate-glow:active {
+    animation: none;
+  }
+</style>

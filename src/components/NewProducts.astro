@@ -1,0 +1,163 @@
+---
+interface Product {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+const products: Product[] = [
+{
+    id: 1,
+    title: "DH-IPC-HDBW8242XN-Z4FR",
+    description: "2MP AI IR Dome Network Camera with Starlight+, Face Recognition, and 4.8-120mm motorized lens",
+    image: "/src/assets/products/img1.png",
+    link: "/products/dome-camera"
+  },
+  {
+    id: 2,
+    title: "DH-IPC-HFW71242H-Z",
+    description: "12MP IR Bullet Network Camera with Starlight technology, 4.1-16.4mm motorized lens, and AI analytics",
+    image: "/src/assets/products/img2.png",
+    link: "/products/bullet-camera"
+  },
+  {
+    id: 3,
+    title: "DH-PTZ1C203UE-GN",
+    description: "2MP 3x Starlight IR PTZ Network Camera with intelligent tracking and auto-focus",
+    image: "/src/assets/products/img3.png",
+    link: "/products/ptz-camera"
+  },
+  {
+    id: 4,
+    title: "DH-IPC-PFW8840-A180",
+    description: "4x2MP Multi-Sensor Panoramic Network IR Bullet Camera with 180° coverage",
+    image: "/src/assets/products/img4.png",
+    link: "/products/panoramic-camera"
+  },
+  {
+    id: 5,
+    title: "DH-TPC-BF5401",
+    description: "Thermal Network Bullet Camera with 400x300 VOx sensor and fire detection analytics",
+    image: "/src/assets/products/img5.png",
+    link: "/products/thermal-camera"
+  },
+  {
+    id: 6,
+    title: "DHI-NVR5864-I",
+    description: "64 Channel AI Network Video Recorder with face recognition and perimeter protection",
+    image: "/src/assets/products/img6.png",
+    link: "/products/nvr"
+  },
+  {
+    id: 7,
+    title: "DH-IPC-HFW7442H-Z4",
+    description: "4MP WizMind IR Bullet Camera with AI analytics, Starlight+ and 8-32mm motorized lens",
+    image: "/src/assets/products/img7.png",
+    link: "/products/wizmind-camera"
+  },
+  {
+    id: 8,
+    title: "DHI-ASI7213X-T1",
+    description: "Face Recognition Access Controller with temperature monitoring and mask detection",
+    image: "/src/assets/products/img8.png",
+    link: "/products/access-control"
+  }
+];
+---
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
+      Our Latest Products
+    </h2>
+
+    <div class="flex overflow-x-hidden">
+      <div class="flex animate-scroll">
+        {products.map((product) => (
+          <div class="min-w-[300px] mx-4">
+            <div class="bg-white rounded-xl overflow-hidden shadow-2xl transform transition-all duration-300 hover:scale-105">
+              <div class="relative overflow-hidden group">
+                <img 
+                  src={product.image} 
+                  alt={product.title}
+                  class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">{product.title}</h3>
+                <p class="text-gray-600 mb-4">{product.description}</p>
+                <a 
+                  href={product.link}
+                  class="inline-block px-6 py-2 bg-gradient-to-r from-yellow-400 to-blue-600 text-white rounded-lg transform transition-all duration-300 hover:from-yellow-500 hover:to-blue-700 hover:scale-105"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        {/* Duplicate the same products for smooth infinite scroll */}
+        {products.map((product) => (
+          <div class="min-w-[300px] mx-4">
+            <div class="bg-white rounded-xl overflow-hidden shadow-2xl transform transition-all duration-300 hover:scale-105">
+              <div class="relative overflow-hidden group">
+                <img 
+                  src={product.image} 
+                  alt={product.title}
+                  class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">{product.title}</h3>
+                <p class="text-gray-600 mb-4">{product.description}</p>
+                <a 
+                  href={product.link}
+                  class="inline-block px-6 py-2 bg-gradient-to-r from-yellow-400 to-blue-600 text-white rounded-lg transform transition-all duration-300 hover:from-yellow-500 hover:to-blue-700 hover:scale-105"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+
+  /* Pause animation on hover */
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  /* Add smooth shadow effect */
+  .shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .shadow-2xl:hover {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
+  }
+</style>

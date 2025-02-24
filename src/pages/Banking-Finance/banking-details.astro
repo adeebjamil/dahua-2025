@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Banking Security Details">
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-50">
+    <div class="container mx-auto px-4 py-16">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center space-y-6">
+          <h1 class="text-5xl font-bold text-gray-900 mb-8 animate-fade-in">
+            Innovating Banking Security
+          </h1>
+          <div class="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl mb-12">
+            <img 
+              src="https://source.unsplash.com/1600x900/?bank,security" 
+              alt="Banking Security"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto space-y-8">
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-700 leading-relaxed mb-8">
+            With millions bank transactions every day, banking and financial institutions have been exposed to substantial criminals. At the same time, how to improve customer experience and management efficiency has been emerged as a major task for management facing the fierce competition in the modern world.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            The fast innovation in security with both technological breakthrough and business integration has been an important enabler for banking and financial institutions to improve vulnerability and management efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Overview -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">
+          Dahua Advanced Technologies to Secure Your Banking and Financial Institutions
+        </h2>
+        
+        <div class="relative h-[300px] rounded-xl overflow-hidden shadow-xl mb-12">
+          <img 
+            src="/src/assets/banking-details.png" 
+            alt="Banking Technology"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+</style>

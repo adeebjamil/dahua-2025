@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Leading Distributor of Dahua Smart Whiteboards in Saudi Arabia – Revolutionize Education & Business Collaboration";
+const description = "As the premier distributor of Dahua smart whiteboards in Saudi Arabia, we provide advanced interactive solutions designed to transform classrooms, boardrooms, and collaborative workspaces. Dahua’s smart whiteboards offer seamless integration with powerful features such as multi-touch interaction, real-time collaboration, and wireless connectivity. Perfect for educational institutions and corporate environments, these digital whiteboards enhance presentations, encourage team engagement, and streamline communication. With cutting-edge technology and superior display quality, Dahua’s interactive whiteboards deliver a dynamic and immersive experience, making them an essential tool for modern learning and business growth. Transform the way you communicate and collaborate with Dahua's innovative whiteboard solutions!";
+
+// Define image URLs from Unsplash
+const images = {
+  hero: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80",
+  products: [
+    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80"
+  ]
+};
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="relative h-[80vh] overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        src={images.hero}
+        alt="Modern Interactive Whiteboard in Educational Setting" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-transparent"></div>
+    </div>
+    <div class="relative container mx-auto px-4 h-full flex items-center">
+      <div class="max-w-2xl text-white space-y-6">
+        <h1 class="text-5xl font-bold leading-tight animate-fade-in">
+          Interactive Whiteboards
+        </h1>
+        <p class="text-xl opacity-90 animate-fade-in-delay">
+          Transform your learning and collaboration spaces with Dahua's innovative touch solutions
+        </p>
+        <button class="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+          Explore Solutions
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Products Showcase -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-16">Our Products</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            name: "LU86-LT400",
+            image: images.products[0],
+            features: ["86\" 4K Display", "40-point touch", "Built-in Android"]
+          },
+          {
+            name: "LU75-LT300",
+            image: images.products[1],
+            features: ["75\" 4K Display", "20-point touch", "Wireless presentation"]
+          },
+          {
+            name: "LU65-LT200",
+            image: images.products[2],
+            features: ["65\" 4K Display", "10-point touch", "Smart whiteboarding"]
+          }
+        ].map(product => (
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+            <img 
+              src={product.image} 
+              alt={product.name} 
+              class="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-4">{product.name}</h3>
+              <ul class="space-y-2">
+                {product.features.map(feature => (
+                  <li class="flex items-center">
+                    <span class="text-blue-600 mr-2">✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

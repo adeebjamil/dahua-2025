@@ -1,0 +1,174 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Seamless Payment Solutions">
+  <!-- Hero Section -->
+  <section class="relative min-h-[80vh] bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 flex items-center">
+    <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <div class="container mx-auto px-4 py-20">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 space-y-6">
+          <h1 class="text-5xl font-bold text-white leading-tight">
+            Seamless Payment <span class="text-purple-400">Solutions</span>
+          </h1>
+          <p class="text-xl text-gray-300">
+            Transform your parking experience with our advanced payment systems
+          </p>
+          <button class="bg-purple-500 text-white px-8 py-3 rounded-lg hover:bg-purple-600 transition-colors flex items-center gap-2">
+            Get Started
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </button>
+        </div>
+        <div class="md:w-1/2">
+          <img src="/src/assets/parking/payment-hero.png" alt="Payment Solutions" class="rounded-lg shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Payment Features</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Multiple Payment Options",
+            description: "Support for credit cards, mobile payments, and digital wallets",
+            icon: "credit-card"
+          },
+          {
+            title: "Real-time Processing",
+            description: "Instant payment verification and confirmation",
+            icon: "clock"
+          },
+          {
+            title: "Secure Transactions",
+            description: "End-to-end encryption and PCI compliance",
+            icon: "shield"
+          }
+        ].map(feature => (
+          <div class="feature-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="text-purple-600 mb-4">
+              {feature.icon === "credit-card" ? (
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 6h18M3 14h18M3 18h18"/>
+                </svg>
+              ) : feature.icon === "clock" ? (
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+                </svg>
+              ) : feature.icon === "shield" ? (
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l8 4v6a8 8 0 01-16 0V6l8-4z"/>
+                </svg>
+              ) : null}
+            </div>
+            <h3 class="text-xl font-bold mb-4">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Process -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-6">
+          {[
+            {
+              step: 1,
+              title: "Park Vehicle",
+              description: "Enter parking space"
+            },
+            {
+              step: 2,
+              title: "Select Payment",
+              description: "Choose payment method"
+            },
+            {
+              step: 3,
+              title: "Process Payment",
+              description: "Secure transaction"
+            },
+            {
+              step: 4,
+              title: "Exit Parking",
+              description: "Automated barrier control"
+            }
+          ].map(step => (
+            <div class="relative">
+              <div class="bg-purple-100 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                  {step.step}
+                </div>
+                <h3 class="font-bold mb-2">{step.title}</h3>
+                <p class="text-sm text-gray-600">{step.description}</p>
+              </div>
+              {step.step < 4 && (
+                <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                  <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 bg-purple-900 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Benefits</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        {[
+          {
+            stat: "100%",
+            label: "Secure"
+          },
+          {
+            stat: "24/7",
+            label: "Available"
+          },
+          {
+            stat: "<2s",
+            label: "Processing"
+          },
+          {
+            stat: "99.9%",
+            label: "Uptime"
+          }
+        ].map(stat => (
+          <div class="text-center transform hover:scale-105 transition-transform">
+            <div class="text-4xl font-bold mb-2">{stat.stat}</div>
+            <div class="text-purple-300">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .bg-grid-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .feature-card {
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+</style>

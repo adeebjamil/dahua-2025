@@ -1,0 +1,284 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Leading Dahua CCTV Software Distributor in Saudi Arabia – Advanced Security & Surveillance Solutions";
+const description = "As the premier distributor of Dahua CCTV software in Saudi Arabia, we offer a comprehensive range of intelligent surveillance solutions to enhance security management. Our advanced Dahua software integrates seamlessly with CCTV systems, providing real-time monitoring, video analytics, and AI-driven threat detection for residential, commercial, and industrial applications. With user-friendly interfaces, remote access, and customizable alerts, our software solutions ensure optimal performance, enabling businesses to safeguard their assets with precision. Whether it’s for smart city initiatives, retail spaces, or industrial facilities, Dahua’s cutting-edge software brings advanced surveillance capabilities, driving efficiency and empowering proactive security management across all sectors."
+
+const softwareProducts = [
+  {
+    name: "DSS Pro",
+    icon: "🎯",
+    description: "Professional surveillance management platform",
+    features: ["Unified Management", "AI Analytics", "Mobile Surveillance"]
+  },
+  {
+    name: "SmartPSS",
+    icon: "💻",
+    description: "Smart Professional Surveillance System",
+    features: ["Live Monitoring", "Playback", "Device Management"]
+  },
+  {
+    name: "DMSS",
+    icon: "📱",
+    description: "Mobile Surveillance Software",
+    features: ["Remote Access", "Push Notifications", "Cloud Storage"]
+  }
+];
+
+const images = {
+  hero: "https://images.unsplash.com/photo-1580584126903-c17d41830450?auto=format&fit=crop&q=80"
+};
+
+const carouselImages = [
+  {
+    url: "https://images.unsplash.com/photo-1580584126903-c17d41830450?auto=format&fit=crop&q=80",
+    title: "DSS Pro Features",
+    description: "Advanced surveillance management system with AI capabilities"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&q=80",
+    title: "DMSS Mobile",
+    description: "Mobile security management on the go"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?auto=format&fit=crop&q=80",
+    title: "Real-time Analytics",
+    description: "Advanced data analysis and monitoring capabilities"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&q=80",
+    title: "Mobile Surveillance",
+    description: "Access your security systems from anywhere"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80",
+    title: "Smart Integration",
+    description: "Seamless integration with existing systems"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&q=80",
+    title: "Cloud Management",
+    description: "Secure cloud-based video management solutions"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1557264337-e8a93017fe92?auto=format&fit=crop&q=80",
+    title: "AI-Powered Detection",
+    description: "Intelligent video analysis and threat detection"
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="relative h-[90vh] overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        src={images.hero}
+        alt="Dahua Security Software Solutions"
+        class="w-full h-full object-cover transform scale-105 animate-slow-zoom"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-900/85 to-transparent"></div>
+      <div class="absolute inset-0 bg-[url('/src/assets/patterns/grid.svg')] opacity-10"></div>
+    </div>
+    
+    <div class="relative container mx-auto px-4 h-full flex items-center">
+      <div class="max-w-2xl text-white space-y-8">
+        <span class="inline-flex items-center px-5 py-2.5 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium mb-4 backdrop-blur-sm animate-fade-in-up">
+          <span class="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+          Security Software Solutions
+        </span>
+        
+        <h1 class="text-6xl font-bold leading-tight animate-fade-in-up">
+          Intelligent Security
+          <span class="block mt-2 bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
+            Management Software
+          </span>
+        </h1>
+        
+        <p class="text-xl text-blue-100/90 animate-fade-in-up delay-200 max-w-xl leading-relaxed">
+          Empower your security infrastructure with Dahua's advanced software solutions
+        </p>
+
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 right-8 flex gap-4 animate-fade-in-up delay-300">
+      <div class="text-white/70 text-sm flex items-center gap-2">
+        <span class="w-12 h-[1px] bg-white/30"></span>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Software Carousel Section -->
+  <section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-white mb-4">Our Software in Action</h2>
+        <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto">
+        <!-- Carousel Container -->
+        <div class="overflow-hidden rounded-2xl">
+          <div class="flex transition-transform duration-500" id="carousel-container">
+            {carouselImages.map((image, index) => (
+              <div class="min-w-full">
+                <div class="relative h-[600px]">
+                  <img 
+                    src={image.url}
+                    alt={image.title}
+                    class="w-full h-full object-cover"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-2">{image.title}</h3>
+                    <p class="text-lg opacity-90">{image.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button 
+          class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"
+          id="prev-btn"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button 
+          class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"
+          id="next-btn"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <!-- Indicators -->
+        <div class="flex justify-center mt-4 gap-2">
+          {carouselImages.map((_, index) => (
+            <button 
+              class="w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all carousel-indicator"
+              data-index={index}
+            ></button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let currentSlide = 0;
+    const totalSlides = document.querySelectorAll('#carousel-container > div').length;
+    const container = document.getElementById('carousel-container');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+
+    function updateCarousel() {
+      if (container) {
+        container.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+      
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('bg-white', index === currentSlide);
+        indicator.classList.toggle('bg-white/30', index !== currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    // Event listeners
+    prevBtn?.addEventListener('click', prevSlide);
+    nextBtn?.addEventListener('click', nextSlide);
+    
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentSlide = index;
+        updateCarousel();
+      });
+    });
+
+    // Optional: Auto-advance every 5 seconds
+    setInterval(nextSlide, 5000);
+  </script>
+
+</Layout>
+
+<style>
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+  }
+
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .animate-slow-zoom {
+    animation: slowZoom 20s ease-out forwards;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+
+  #carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  #carousel-container > div {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+</style>
+
+
+

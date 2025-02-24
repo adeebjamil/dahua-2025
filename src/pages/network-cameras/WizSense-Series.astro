@@ -1,0 +1,712 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="WizSense Series | Network Cameras">
+  <!-- Product Information Section -->
+  <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8">WizSense Series</h1>
+
+        <!-- Header Image Section -->
+        <div class="relative w-full mb-12 rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="/src/assets/WizSense/img1.jpg"
+            alt="WizSense Series Surveillance"
+            class="w-full h-[400px] object-cover"
+          />
+        </div>
+
+        <!-- Product Description Section -->
+        <div class="mb-12 space-y-6">
+          <div class="space-y-4">
+            <h2 class="text-2xl font-semibold text-gray-900">WizSense - AI-Powered Surveillance Solutions</h2>
+            <p class="text-gray-700">Launched by Dahua Technology, WizSense is a series of wide range AI products and solutions that adopt independent AI chip and deep learning algorithm. It can recognize human and vehicle in an image with high accuracy, enabling users to focus on real targets. WizSense focuses on human and vehicle, benefiting everyone with intelligent functions, simple configuration and inclusive products.</p>
+            <p class="text-gray-700">SMD 4.0：With upgraded AI capabilities, the SMD function filters out irrelevant objects in the scene. Equipped with new deep learning algorithm, SMD 4.0 is optimized to filter out small and large animals in the scene to avoid triggering false alarms.</p>
+            <p class="text-gray-700">Also, SMD 4.0 can detect the color information of clothing and vehicle for data support of quick search after an event.</p>
+            <p class="text-gray-700">Quick Pick: Quick Pick technology can quickly identify human/vehicle targets of interest, which optimizes the search for relevant SMD events. With excellent integration of intelligent functions of both cameras and recorders, this feature can search human/vehicle targets based on AI algorithm that can extract and compare clothing and vehicle colors.</p>
+            <p class="text-gray-700">AI SSA：AI SSA (Scene Self-adaption) technology is based on deep learning algorithm that can intelligently identify multiple scenes and adjust to their optimal images.</p>
+            <p class="text-gray-700">AI Coding(IP Solution): With the improvement of monitoring resolution, how to maintain image quality while saving storage cost has become one of the most concerning problems of users. Based on CBR (Constant Bit Rate), WizSense AI Coding dynamically allocate bit rate, providing clear target images while saving more than 25% bit rate compared with H.265.</p>
+          </div>
+        </div>
+
+        <!-- Product Categories Tabs -->
+        <div class="mb-12">
+          <div class="flex flex-wrap space-x-4 border-b border-gray-200">
+            {['2 Series', '3 Series', 'Full-color', 'TiOC', 'Anti-oil Camera', '4G'].map((series, index) => (
+              <button
+                class={`series-btn px-6 py-3 text-sm font-medium transition-colors duration-200 ${index === 0 ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600 hover:text-blue-600'}`}
+                data-series={series}
+              >
+                {series}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Product Series Categories -->
+        <div class="subcategory-container grid md:grid-cols-4 gap-6 mb-12"></div>
+
+        <!-- Product Grid -->
+        <div class="product-grid flex flex-wrap gap-4 justify-center">
+          <!-- Parallelogram added here -->
+          <div class="absolute top-2 right-2 w-8 h-4 bg-purple-600 transform skew-x-12"></div>
+          <!-- Existing product grid content -->
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Add smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<script>
+  const products = [
+    // Existing products...
+    // Adding new products to 2 Series, Smart Dual Light subcategory
+    {
+      id: 'IPC-HFW2849T-AS-IL',
+      name: '8MP Smart Dual Light Fixed-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img2.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HFW2549T-AS-IL',
+      name: '5MP Smart Dual Light Fixed-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img2.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HFW2449T-AS-IL',
+      name: '4MP Smart Dual Light Fixed-focal Bullet WizSense Network Camera',
+
+      image: '/src/assets/WizSense/img2.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HFW2249T-AS-IL',
+      name: '2MP Smart Dual Light Fixed-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img2.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HFW2849S-S-IL',
+      name: '8MP Smart Dual Light Fixed-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img3.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HFW2549S-S-IL',
+      name: '5MP Smart Dual Light Fixed-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img3.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HFW2449S-S-IL',
+      name: '4MP Smart Dual Light Fixed-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img3.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HFW2249S-S-IL',
+      name: '2MP Smart Dual Light Fixed-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img3.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HDW2849TM-S-IL',
+      name: '8MP Smart Dual Light Fixed-focal Eyeball WizSense Network Camera',
+      image: '/src/assets/WizSense/img4.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HDW2549TM-S-IL',
+      name: '5MP Smart Dual Light Fixed-focal Eyeball WizSense Network Camera',
+      image: '/src/assets/WizSense/img4.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HDW2849T-S-IL',
+      name: '8MP Smart Dual Light Fixed-focal Eyeball WizSense Network Camera',
+      image: '/src/assets/WizSense/img4.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    {
+      id: 'IPC-HDW2549T-S-IL',
+      name: '5MP Smart Dual Light Fixed-focal Eyeball WizSense Network Camera',
+      image: '/src/assets/WizSense/img4.png',
+      series: '2 Series',
+      subcategory: 'Smart Dual Light'
+    },
+    // Adding new products to 2 Series, 2MP subcategory
+    {
+      id: 'IPC-HDBW2241R-ZS',
+      name: '2MP IR Vari-focal Dome WizSense Network Camera',
+      image: '/src/assets/WizSense/img5.png',
+      series: '2 Series',
+      subcategory: '2MP'
+    },
+    {
+      id: 'IPC-HFW2241T-ZS',
+      name: '2MP IR Vari-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img6.png',
+      series: '2 Series',
+      subcategory: '2MP'
+    },
+
+    // Adding new products to 2 Series, 4MP subcategory
+    {
+      id: 'IPC-HFW2441T-ZS',
+      name: '4MP IR Vari-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img10.png',
+      series: '2 Series',
+      subcategory: '4MP'
+    },
+    {
+      id: 'IPC-HDBW2441R-ZS',
+      name: '4MP IR Vari-focal Dome WizSense Network Camera',
+      image: '/src/assets/WizSense/img5.png',
+      series: '2 Series',
+      subcategory: '4MP'
+    },
+    {
+      id: 'IPC-HFW2441T-ZAS',
+      name: '4MP IR Vari-focal Bullet WizSense Network Camera',
+      image: '/src/assets/WizSense/img7.png',
+      series: '2 Series',
+      subcategory: '4MP'
+    },
+    {
+      id: 'IPC-HDBW2441R-ZAS',
+      name: '4MP IR Vari-focal Dome WizSense Network Camera',
+      image: '/src/assets/WizSense/img4.png',
+      series: '2 Series',
+      subcategory: '4MP'
+    },
+
+    // Adding new products to 2 Series, 5MP subcategory
+    {
+      id: 'IPC-HFW2541T-ZAS',
+      name: '5MP IR Vari-focal Bullet WizSense Network Camera',
+      image: '@/assets/NetworkCameras/IPC-HFW2541T-ZAS.png',
+      series: '2 Series',
+      subcategory: '5MP'
+    },
+    {
+      id: 'IPC-HDW2541T-S',
+      name: '5MP IR Fixed-focal Eyeball WizSense Network Camera',
+      image: '@/assets/NetworkCameras/IPC-HDW2541T-S.png',
+      series: '2 Series',
+      subcategory: '5MP'
+    },
+    {
+      id: 'IPC-HFW2541T-AS',
+      name: '5MP IR Fixed-focal Bullet WizSense Network Camera',
+      image: '@/assets/NetworkCameras/IPC-HFW2541T-AS.png',
+      series: '2 Series',
+      subcategory: '5MP'
+    },
+    {
+      id: 'IPC-HFW2541S-S',
+      name: '5MP IR Fixed-focal Bullet WizSense Network Camera',
+      image: '@/assets/NetworkCameras/IPC-HFW2541S-S.png',
+      series: '2 Series',
+      subcategory: '5MP'
+    },
+    {
+      id: 'IPC-HDBW2541R-ZS',
+      name: '5MP IR Vari-focal Dome WizSense Network Camera',
+      image: '@/assets/NetworkCameras/IPC-HDBW2541R-ZS.png',
+      series: '2 Series',
+      subcategory: '5MP'
+    },
+
+        // Adding new products to 2 Series, 8MP subcategory
+    {
+      id: 'IPC-HFW2841T-ZS',
+      name: '8MP IR Vari-focal Bullet WizSense Network Camera',
+      image: '@/assets/NetworkCameras/IPC-HFW2841T-ZS.png',
+      series: '2 Series',
+      subcategory: '8MP'
+    },
+    {
+      id: 'IPC-HDBW2841R-ZS',
+      name: '8MP IR Vari-focal Dome WizSense Network Camera',
+      image: '@/assets/NetworkCameras/IPC-HDBW2841R-ZS.png',
+      series: '2 Series',
+      subcategory: '8MP'
+    },
+    {
+      id: 'IPC-HFW2841T-ZAS',
+      name: '8MP IR Vari-focal Bullet WizSense Network Camera',
+      image: '@/assets/NetworkCameras/IPC-HFW2841T-ZAS.png',
+      series: '2 Series',
+      subcategory: '8MP'
+    },
+
+     // Adding new products to 3 Series, Wide Angle subcategory
+  {
+    id: 'IPC-HFW3441T-AS-P',
+    name: '4MP Wide Angle Fixed Bullet WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HFW3441T-AS-P.png',
+    series: '3 Series',
+    subcategory: 'Wide Angle'
+  },
+  {
+    id: 'IPC-HDBW3441R-AS-P',
+    name: '4MP Wide Angle Fixed Dome WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDBW3441R-AS-P.png',
+    series: '3 Series',
+    subcategory: 'Wide Angle'
+  },
+
+  // Adding new products to 3 Series, 8MP subcategory
+  {
+    id: 'DH-IPC-HFW3841EP-AS',
+    name: '8MP IR Vari-focal Bullet WizSense Network Camera',
+    image: '@/assets/NetworkCameras/DH-IPC-HFW3841EP-AS.png',
+    series: '3 Series',
+    subcategory: '8MP'
+  },
+  {
+    id: 'DH-IPC-HFW3841TP-ZAS',
+    name: '8MP IR Vari-focal Bullet WizSense Network Camera',
+    image: '@/assets/NetworkCameras/DH-IPC-HFW3841TP-ZAS.png',
+    series: '3 Series',
+    subcategory: '8MP'
+  },
+  {
+    id: 'DH-IPC-HDBW3841RP-ZAS',
+    name: '8MP IR Vari-focal Dome WizSense Network Camera',
+    image: '@/assets/NetworkCameras/DH-IPC-HDBW3841RP-ZAS.png',
+    series: '3 Series',
+    subcategory: '8MP'
+  },
+  {
+    id: 'IPC-HDW3841T-ZS-S2',
+    name: '8MP IR Vari-focal Eyeball WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW3841T-ZS-S2.png',
+    series: '3 Series',
+    subcategory: '8MP'
+  },
+  {
+    id: 'IPC-HDW3841EM-S-S2',
+    name: '8MP IR Fixed-focal Eyeball WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW3841EM-S-S2.png',
+    series: '3 Series',
+    subcategory: '8MP'
+  },
+
+// Adding new products to 3 Series, 5MP subcategory
+{
+  id: 'DH-IPC-HFW3541EP-AS',
+  name: '5MP IR Fixed-focal Bullet WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HFW3541EP-AS.png',
+  series: '3 Series',
+  subcategory: '5MP'
+},
+{
+  id: 'DH-IPC-HFW3541TP-ZAS',
+  name: '5MP IR Vari-focal Bullet WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HFW3541TP-ZAS.png',
+  series: '3 Series',
+  subcategory: '5MP'
+},
+{
+  id: 'DH-IPC-HDBW3541EP-AS',
+  name: '5MP IR Fixed-focal Dome WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HDBW3541EP-AS.png',
+  series: '3 Series',
+  subcategory: '5MP'
+},
+{
+  id: 'DH-IPC-HDBW3541EP-S',
+  name: '5MP IR Fixed-focal Dome WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HDBW3541EP-S.png',
+  series: '3 Series',
+  subcategory: '5MP'
+},
+//Adding new products to 23 Series, 4MP subcategory
+{
+  id: 'DH-IPC-HFW3441E-AS',
+  name: '4MP IR Fixed focal Bullet WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HFW3441E-AS.png',
+  series: '3 Series',
+  subcategory: '4MP'
+},
+{
+  id: 'DH-IPC-HFW3441M-AS-I2',
+  name: '4MP IR Fixed focal Bullet WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HFW3441M-AS-I2.png',
+  series: '3 Series',
+  subcategory: '4MP'
+},
+{
+  id: 'DH-IPC-HFW3441EP-AS',
+  name: '4 MP IR Fixed-focal Bullet WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HFW3441EP-AS.png',
+  series: '3 Series',
+  subcategory: '4MP'
+},
+{
+  id: 'DH-IPC-HFW3441TP-ZAS',
+  name: '4MP IR Vari-focal Bullet WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HFW3441TP-ZAS.png',
+  series: '3 Series',
+  subcategory: '4MP'
+},
+{
+  id: 'DH-IPC-HFW3441TP-ZS',
+  name: '4MP IR Vari-focal Bullet WizSense Network Camera',
+  image: '@/assets/NetworkCameras/DH-IPC-HFW3441TP-ZS.png',
+  series: '3 Series',
+  subcategory: '4MP'
+},
+
+
+// Adding new products to 3 Series, 2MP subcategory
+
+  {
+    id: 'DH-IPC-HDBW3241E-AS',
+    name: '2MP IR Fixed-focal Dome WizSense Network Camera',
+    image: '@/assets/NetworkCameras/DH-IPC-HDBW3241E-AS.png',
+    series: '3 Series',
+    subcategory: '2MP'
+  },
+  {
+    id: 'DH-IPC-HDBW3241F-AS-M',
+    name: '2MP IR Fixed-focal Dome WizSense Network Camera',
+    image: '@/assets/NetworkCameras/DH-IPC-HDBW3241F-AS-M.png',
+    series: '3 Series',
+    subcategory: '2MP'
+  },
+  {
+    id: 'DH-IPC-HFW3241EP-AS',
+    name: '2 MP IR Fixed-focal Bullet WizSense Network Camera',
+    image: '@/assets/NetworkCameras/DH-IPC-HFW3241EP-AS.png',
+    series: '3 Series',
+    subcategory: '2MP'
+  },
+  {
+    id: 'DH-IPC-HDBW3241EP-AS',
+    name: '2MP IR Fixed-focal Dome WizSense Network Camera',
+    image: '@/assets/NetworkCameras/DH-IPC-HDBW3241EP-AS.png',
+    series: '3 Series',
+    subcategory: '2MP'
+  },
+  
+
+
+
+  // Adding new products to Full-color, 2 Series subcategory
+  {
+    id: 'IPC-HDW2449T-S-LED',
+    name: '4MP Full-color Fixed-focal Eyeball Wizsense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW2449T-S-LED.png',
+    series: 'Full-color',
+    subcategory: '2 Series'
+  },
+  {
+    id: 'IPC-HDW2249T-S-LED',
+    name: '2MP Full-color Fixed-focal Eyeball Wizsense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW2249T-S-LED.png',
+    series: 'Full-color',
+    subcategory: '2 Series'
+  },
+  {
+    id: 'IPC-HFW2449S-S-LED',
+    name: '4MP Full-color Fixed-focal Bullet Wizsense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HFW2449S-S-LED.png',
+    series: 'Full-color',
+    subcategory: '2 Series'
+  },
+
+
+   // Adding new products to Full-color, 3 Series subcategory
+   {
+    id: 'IPC-HDW3549TM-AS-LED',
+    name: '5MP Full-color Fixed-focal Warm LED Eyeball WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW3549TM-AS-LED.png',
+    series: 'Full-color',
+    subcategory: '3 Series'
+  },
+  {
+    id: 'IPC-HFW3449E-AS-LED',
+    name: '4MP Full-color Warm LED Fixed-focal Bullet WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HFW3449E-AS-LED.png',
+    series: 'Full-color',
+    subcategory: '3 Series'
+  },
+  {
+    id: 'IPC-HDW3449TM-AS-NI',
+    name: '4MP Full-color Fixed-focal Eyeball WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW3449TM-AS-NI.png',
+    series: 'Full-color',
+    subcategory: '3 Series'
+  },
+
+
+  
+  // Adding new products to TiOC category with Dual Camera subcategory
+  {
+    id: 'IPC-HFW3549T1-ZAS-PV',
+    name: '5MP Smart Dual Light Active Deterrence Vari-focal Bullet WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HFW3549T1-ZAS-PV.png',
+    series: 'TiOC',
+    subcategory: 'Dual Camera'
+  },
+  {
+    id: 'IPC-PFW3849S-A180-AS-PV',
+    name: '2x4MP TiOC Duo Splicing Fixed-focal Bullet WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-PFW3849S-A180-AS-PV.png',
+    series: 'TiOC',
+    subcategory: 'Dual Camera'
+  },
+  {
+    id: 'IPC-PDW3849-A180-AS-PV',
+    name: '2x4MP TiOC Duo Splicing Fixed-focal Eyeball WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-PDW3849-A180-AS-PV.png',
+    series: 'TiOC',
+    subcategory: 'Dual Camera'
+  },
+  {
+    id: 'IPC-HDW3849H-ZAS-PV',
+    name: '8 MP Smart Dual Light Active Deterrence Vari-focal Eyeball WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW3849H-ZAS-PV.png',
+    series: 'TiOC',
+    subcategory: 'Dual Camera'
+  },
+  {
+    id: 'IPC-HDW3549H-ZAS-PV',
+    name: '5 MP Smart Dual Light Active Deterrence Vari-focal Eyeball WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW3549H-ZAS-PV.png',
+    series: 'TiOC',
+    subcategory: 'Dual Camera'
+  },
+  {
+    id: 'IPC-HDW3449H-ZAS-PV',
+    name: '4 MP Smart Dual Light Active Deterrence Vari-focal Eyeball WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDW3449H-ZAS-PV.png',
+    series: 'TiOC',
+    subcategory: 'Dual Camera'
+  },
+
+  //Adding new products to Anti-Oil camera category with All Series subcategory
+
+  {
+    id: 'IPC-HFW3441M-AS-SFC-I2',
+    name: '4MP Anti-oil IR Fixed focal Bullet WizSense Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HFW3441M-AS-SFC-I2.png',
+    series: 'Anti-oil Camera',
+    subcategory: 'All Series'
+  },
+
+
+  //Adding new products to 4G category with Network Camera subcategory
+
+  {
+    id: 'IPC-HDBW3441DR1-AST-4G-LA',
+    name: '4MP IR fixed focal Dome WizSense 4G Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDBW3441DR1-AST-4G-LA.png',
+    series: '4G',
+    subcategory: 'Network Camera'
+  },
+  {
+    id: 'IPC-HDBW3441DR1-AST-4G-EAU',
+    name: '4MP IR fixed focal Dome WizSense 4G Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HDBW3441DR1-AST-4G-EAU.png',
+    series: '4G',
+    subcategory: 'Network Camera'
+  },
+  {
+    id: 'IPC-HFW2431DG-4G-SP-LA-B',
+    name: '4MP IR Fixed-focal Bullet 4G Solar Power Network Camera',
+    image: '@/assets/NetworkCameras/IPC-HFW2431DG-4G-SP-LA-B.png',
+    series: '4G',
+    subcategory: 'Network Camera'
+  },
+
+  
+
+
+
+
+
+
+  ];
+
+  let currentSeries = '2 Series';
+  let currentSubcategory = 'Smart Dual Light';
+
+  // Function to handle series button click
+  function showSeries(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target) return;
+    const series = target.dataset.series;
+    if (series) {
+      currentSeries = series;
+      // Reset subcategory when changing series
+      currentSubcategory = '';
+    }
+    
+    // Update UI for series buttons
+    document.querySelectorAll('.series-btn').forEach(btn => {
+      btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+      btn.classList.add('text-gray-600');
+    });
+    target.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+    
+    // Show/hide subcategory buttons based on series
+    updateSubcategoryVisibility();
+    filterProducts();
+  }
+
+  // Function to update subcategory visibility
+  function updateSubcategoryVisibility() {
+    const subcategoryContainer = document.querySelector('.subcategory-container') as HTMLElement;
+    if (subcategoryContainer) {
+      let subcategories: string[] = [];
+      switch (currentSeries) {
+        case '2 Series':
+          subcategories = ['Smart Dual Light', '2MP', '4MP', '5MP', '8MP'];
+          break;
+        case '3 Series':
+          subcategories = ['Wide Angle', '8MP', '5MP', '4MP', '2MP'];
+          break;
+        case 'Full-color':
+          subcategories = ['2 Series', '3 Series'];
+          break;
+        case 'TiOC':
+          subcategories = ['Dual Camera'];
+          break;
+        case 'Anti-oil Camera':
+          subcategories = ['All Series'];
+          break;
+        case '4G':
+          subcategories = ['Network Camera'];
+          break;
+      }
+      
+      if (subcategories.length > 0) {
+        subcategoryContainer.style.display = 'grid';
+        subcategoryContainer.innerHTML = subcategories.map(subcategory => `
+          <button 
+            class="subcategory-btn px-6 py-3 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+            data-subcategory="${subcategory}"
+            onClick={showSubcategory}
+          >
+            ${subcategory}
+          </button>
+        `).join('');
+        
+        // Reattach event listeners
+        document.querySelectorAll('.subcategory-btn').forEach(btn => {
+          btn.addEventListener('click', showSubcategory);
+        });
+      } else {
+        subcategoryContainer.style.display = 'none';
+      }
+    }
+  }
+
+  // Function to handle subcategory button click
+  function showSubcategory(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target) return;
+    const subcategory = target.dataset.subcategory || '';
+    currentSubcategory = subcategory;
+    
+    // Update UI for subcategory buttons
+    document.querySelectorAll('.subcategory-btn').forEach(btn => {
+      if ((btn as HTMLElement).dataset.subcategory === subcategory) {
+        btn.classList.add('bg-blue-600', 'text-white');
+      } else {
+        btn.classList.remove('bg-blue-600', 'text-white');
+      }
+    });
+    
+    filterProducts();
+  }
+
+  // Function to filter products based on current series and subcategory
+  function filterProducts() {
+    const filteredProducts = products.filter(product => {
+      const seriesMatch = product.series === currentSeries;
+      const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory;
+      return seriesMatch && subcategoryMatch;
+    });
+
+    updateProductGrid(filteredProducts);
+  }
+
+  // Function to update the product grid with filtered products
+  function updateProductGrid(productList: { id: string; name: string; image: string; series: string; subcategory: string; }[]) {
+    const productGrid = document.querySelector('.product-grid') as HTMLElement;
+    if (productGrid) {
+      productGrid.innerHTML = productList.map(product => `
+        <div class="flex-shrink-0 w-[300px] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 relative">
+         
+            <div class="absolute top-2 left-2 w-8 h-4 bg-purple-500 transform skew-x-12"></div>
+          
+          <div class="p-4">
+            <div class="aspect-square bg-gray-50 rounded-lg mb-4 flex items-center justify-center">
+              <img 
+                src="${product.image}" 
+                alt="${product.name}"
+                class="object-contain h-40 w-40 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-gray-900">${product.id}</h3>
+              <p class="text-gray-600 text-sm line-clamp-3">${product.name}</p>
+              <a 
+                href="/products/${product.id}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 mt-2 group"
+              >
+                View Details
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+
+  // Add event listener initialization when the document loads
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add click event listeners to series buttons
+    document.querySelectorAll('.series-btn').forEach(btn => {
+      btn.addEventListener('click', showSeries);
+    });
+
+    // Add click event listeners to subcategory buttons
+    document.querySelectorAll('.subcategory-btn').forEach(btn => {
+      btn.addEventListener('click', showSubcategory);
+    });
+
+    // Initial filter to show default products
+    filterProducts();
+  });
+</script>

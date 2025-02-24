@@ -1,0 +1,427 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from 'astro-icon';
+---
+
+<Layout title="Lite Series | Network Cameras">
+  <!-- Product Information Section -->
+  <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8">Lite Series</h1>
+
+        <!-- Header Image Section -->
+        <div class="w-full mb-12 rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="/src/assets/ProSeries/heroimg.jpg"
+            alt="Light Series Surveillance"
+            class="w-full h-[400px] object-cover"
+          />
+        </div>
+
+        <!-- Product Description Section -->
+        <div class="mb-12 space-y-6">
+          <div class="space-y-4">
+            <h2 class="text-2xl font-semibold text-gray-900">Light Series - Advanced Surveillance Solutions</h2>
+            <p class="text-gray-700">Our Light Series cameras offer advanced features and functionality, providing high-quality surveillance solutions for various applications. These cameras are designed with cutting-edge technology to deliver superior performance and reliability.</p>
+            <p class="text-gray-700">With features like intelligent video analysis, high-definition imaging, and robust build quality, the Light Series cameras are ideal for professional security needs.</p>
+            <p class="text-gray-700">Explore our range of Light Series cameras and find the perfect solution for your surveillance requirements.</p>
+          </div>
+        </div>
+
+        <!-- Product Categories Tabs -->
+        <div class="mb-12">
+          <div class="flex flex-wrap space-x-4 border-b border-gray-200">
+            {['Full-color', '8MP', '5MP', '4MP', '2MP'].map((category, index) => (
+              <button
+                class={`category-btn px-6 py-3 text-sm font-medium transition-colors duration-200 ${index === 0 ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600 hover:text-blue-600'}`}
+                data-category={category}
+                onclick="showCategory(event)"
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid flex flex-wrap gap-4 justify-center"></div>
+
+        <!-- Pagination Controls - Updated markup -->
+        <div class="pagination-controls flex items-center justify-center gap-2 mt-12">
+          <button class="nav-btn prev-btn" data-action="prev" onclick="handleNavigation(event)">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <div class="flex items-center gap-1 pagination-numbers"></div>
+          <button class="nav-btn next-btn" data-action="next" onclick="handleNavigation(event)">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Add smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Pagination Styles */
+  .pagination-controls {
+    @apply select-none;
+  }
+
+  .nav-btn {
+    @apply w-8 h-8 flex items-center justify-center
+           text-gray-600 hover:text-blue-600
+           transition-all duration-200 disabled:opacity-50 
+           disabled:cursor-not-allowed disabled:hover:bg-transparent;
+  }
+
+  .page-btn {
+    @apply w-8 h-8 flex items-center justify-center
+           text-sm font-medium transition-all duration-200
+           border border-gray-300;
+  }
+
+  .page-btn.active {
+    @apply bg-blue-600 text-white border-blue-600;
+  }
+</style>
+
+<script>
+  const products = [
+    // Products for Full-color category
+    {
+      id: 'IPC-HFW2230M-AS-LED-B',
+      name: '2MP Lite Full-color Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2230M-AS-LED-B.png',
+      category: 'Full-color'
+    },
+    {
+      id: 'IPC-HFW2439M-AS-LED-B-S2',
+      name: '4MP Lite Full-color Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2439M-AS-LED-B-S2.png',
+      category: 'Full-color'
+    },
+    {
+      id: 'IPC-HFW2239S-SA-LED-S2',
+      name: '2MP Lite Full-color Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2239S-SA-LED-S2.png',
+      category: 'Full-color'
+    },
+    {
+      id: 'IPC-HFW2239M-AS-LED-B-S2',
+      name: '2MP Lite Full-color Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2239M-AS-LED-B-S2.png',
+      category: 'Full-color'
+    },
+    {
+      id: 'IPC-HDW2439T-AS-LED-S2',
+      name: '4MP Lite Full-color Fixed-focal Eyeball Network Camera',
+      image: '/src/assets/LightSeries/IPC-HDW2439T-AS-LED-S2.png',
+      category: 'Full-color'
+    },
+    {
+      id: 'IPC-HDW2239T-AS-LED-S2',
+      name: '2MP Lite Full-color Fixed-focal Eyeball Network Camera',
+      image: '/src/assets/LightSeries/IPC-HDW2239T-AS-LED-S2.png',
+      category: 'Full-color'
+    },
+
+    // Products for 8MP category
+    {
+      id: 'IPC-HDBW2831R-ZAS-S2',
+      name: '8MP Lite IR Vari-focal Dome Network Camera',
+      image: '/src/assets/LightSeries/IPC-HDBW2831R-ZAS-S2.png',
+      category: '8MP'
+    },
+    {
+      id: 'IPC-HFW2831T-ZS-S2',
+      name: '8MP Lite IR Vari-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2831T-ZS-S2.png',
+      category: '8MP'
+    },
+    {
+      id: 'IPC-HFW2831T-ZAS-S2',
+      name: '8MP Lite IR Vari-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2831T-ZAS-S2.png',
+      category: '8MP'
+    },
+    {
+      id: 'IPC-HFW2831T-AS-S2',
+      name: '8MP Lite IR Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2831T-AS-S2.png',
+      category: '8MP'
+    },
+
+   
+
+ 
+    // Products for 5MP category
+    {
+      id: 'IPC-HFW2541T-ZS',
+      name: '5MP IR Vari-focal Bullet WizSense Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2541T-ZS.png',
+      category: '5MP'
+    },
+    {
+      id: 'IPC-HDBW2541R-ZAS',
+      name: '5MP IR Vari-focal Dome WizSense Network Camera',
+      image: '/src/assets/LightSeries/IPC-HDBW2541R-ZAS.png',
+      category: '5MP'
+    },
+    {
+      id: 'IPC-HDBW2541E-S',
+      name: '5MP IR Fixed-focal Dome WizSense Network Camera',
+      image: '/src/assets/LightSeries/IPC-HDBW2541E-S.png',
+      category: '5MP'
+    },
+    {
+      id: 'IPC-HFW2531T-ZS-S2',
+      name: '5MP Lite IR Vari-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2531T-ZS-S2.png',
+      category: '5MP'
+    },
+    {
+      id: 'IPC-HFW2531T-ZAS-S2',
+      name: '5MP Lite IR Vari-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2531T-ZAS-S2.png',
+      category: '5MP'
+    },
+    {
+      id: 'IPC-HFW2531T-AS-S2',
+      name: '5MP Lite IR Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/IPC-HFW2531T-AS-S2.png',
+      category: '5MP'
+    },
+ 
+     
+    // Products for 4MP category
+    {
+      id: 'DH-IPC-HDW1430T2-A',
+      name: '4MP Entry IR Fixed-focal Eyeball Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HDW1430T2-A.png',
+      category: '4MP'
+    },
+    {
+      id: 'DH-IPC-HFW1430TL2-A',
+      name: '4MP Entry IR Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HFW1430TL2-A.png',
+      category: '4MP'
+    },
+    {
+      id: 'DH-IPC-HFW1449S1-A-IL',
+      name: '4MP Smart Dual Light Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HFW1449S1-A-IL.png',
+      category: '4MP'
+    },
+    {
+      id: 'DH-IPC-HDW1439V-PV',
+      name: '4MP Dual Light Fixed-focal Eyeball Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HDW1439V-PV.png',
+      category: '4MP'
+    },
+    {
+      id: 'DH-IPC-HFW1439TL2-A-IL',
+      name: '4MP Dual Light Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HFW1439TL2-A-IL.png',
+      category: '4MP'
+    },
+    {
+      id: 'DH-IPC-HFW1439TL2-A-LED',
+      name: '4MP Entry Full-color Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HFW1439TL2-A-LED.png',
+      category: '4MP'
+    },
+  
+    // Products for 2MP category
+    {
+      id: 'DH-IPC-HDW1239T2-A-IL',
+      name: '2MP Dual Light Fixed-focal Eyeball Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HDW1239T2-A-IL.png',
+      category: '2MP'
+    },
+    {
+      id: 'DH-IPC-HFW1239TL2-A-IL',
+      name: '2MP Dual Light Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HFW1239TL2-A-IL.png',
+      category: '2MP'
+    },
+    {
+      id: 'DH-IPC-HFW1249S1-A-IL',
+      name: '2MP Smart Dual Light Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HFW1249S1-A-IL.png',
+      category: '2MP'
+    },
+    {
+      id: 'DH-IPC-HDW1249T1-A-IL',
+      name: '2MP Smart Dual Light Fixed-focal Eyeball Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HDW1249T1-A-IL.png',
+      category: '2MP'
+    },
+    {
+      id: 'DH-IPC-HFW1239TL-A-IL',
+      name: '2MP Dual Light Fixed-focal Bullet Network Camera',
+      image: '/src/assets/LightSeries/DH-IPC-HFW1239TL-A-IL.png',
+      category: '2MP'
+    },
+  ];
+
+  // Declare showCategory and showPage on the window object
+  declare global {
+    interface Window {
+      showCategory: (event: Event) => void;
+      showPage: (event: Event) => void;
+    }
+  }
+
+  // Function to handle category button click
+  function showCategory(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target) return;
+    const category = target.dataset.category;
+    if (category) {
+      currentCategory = category;
+      currentPage = 1; // Reset to the first page
+    }
+
+    // Update UI for category buttons
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+      btn.classList.add('text-gray-600');
+    });
+    target.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+
+    filterProducts();
+  }
+
+  // Function to handle page change
+  function showPage(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target) return;
+    const page = parseInt(target.dataset.page || '0');
+    if (page) {
+      currentPage = page;
+    }
+
+    filterProducts();
+  }
+
+  // Bind showCategory function to the window object
+  window.showCategory = showCategory;
+  window.showPage = showPage;
+
+  let currentCategory = 'Full-color';
+  let currentPage = 1;
+  const productsPerPage = 10;
+
+  // Function to filter products based on current category and page
+  function filterProducts() {
+    const filteredProducts = products.filter(product => product.category === currentCategory);
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+    const start = (currentPage - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    const paginatedProducts = filteredProducts.slice(start, end);
+
+    updateProductGrid(paginatedProducts);
+    updatePaginationControls(totalPages);
+  }
+
+  // Function to update the product grid with filtered products
+  function updateProductGrid(productList: { id: string; name: string; image: string; category: string }[]) {
+    const productGrid = document.querySelector('.product-grid');
+    if (productGrid) {
+      productGrid.innerHTML = productList.map(product => `
+        <div class="flex-shrink-0 w-[300px] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 relative">
+          <!-- CCTV Icon -->
+          <div class="absolute top-2 right-2 flex gap-1.5">
+            <Icon name="cctv" class="w-5 h-5" />
+          </div>
+          
+          <div class="p-4">
+            <div class="aspect-square bg-gray-50 rounded-lg mb-4 flex items-center justify-center">
+              <img 
+                src="${product.image}" 
+                alt="${product.name}"
+                class="object-contain h-40 w-40 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-gray-900">${product.id}</h3>
+              <p class="text-gray-600 text-sm line-clamp-3">${product.name}</p>
+              <a 
+                href="/products/${product.id}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 mt-2 group"
+              >
+                View Details
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+
+  function handleNavigation(event: Event) {
+    const target = event.currentTarget as HTMLButtonElement;
+    const action = target.dataset.action;
+    
+    if (action === 'prev' && currentPage > 1) {
+      currentPage--;
+    } else if (action === 'next' && currentPage < Math.ceil(products.filter(p => p.category === currentCategory).length / productsPerPage)) {
+      currentPage++;
+    }
+    
+    filterProducts();
+  }
+
+  function updatePaginationControls(totalPages: number) {
+    const paginationNumbers = document.querySelector('.pagination-numbers');
+    const prevBtn = document.querySelector('.prev-btn') as HTMLButtonElement;
+    const nextBtn = document.querySelector('.next-btn') as HTMLButtonElement;
+    
+    if (!paginationNumbers) return;
+    
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+    
+    let buttons = [];
+    
+    for (let i = 1; i <= totalPages; i++) {
+      buttons.push(`
+        <button
+          class="page-btn ${i === currentPage ? 'active' : ''}"
+          data-page="${i}"
+          onclick="showPage(event)"
+        >
+          ${i}
+        </button>
+      `);
+    }
+    
+    paginationNumbers.innerHTML = buttons.join('');
+  }
+
+  // Add event listener initialization when the document loads
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add click event listeners to category buttons
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', (event) => window.showCategory(event));
+    });
+
+    // Initial filter to show default products
+    filterProducts();
+  });
+</script>

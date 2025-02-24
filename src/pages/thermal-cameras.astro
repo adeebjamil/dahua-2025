@@ -1,0 +1,531 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = "Leading Distributor of Dahua Thermal Cameras in Saudi Arabia – Cutting-Edge CCTV Solutions for Enhanced Security";
+const description = "As a top distributor of Dahua CCTV thermal cameras in Saudi Arabia, we provide state-of-the-art thermal imaging solutions designed for advanced surveillance and security needs. Dahua’s thermal cameras offer powerful detection capabilities in low-light and challenging environments, ensuring accurate monitoring in all conditions. Our product range includes cameras with AI-driven analytics, temperature screening, and perimeter protection features, ideal for critical infrastructures, industrial facilities, and public safety. With unparalleled accuracy and 24/7 performance, Dahua’s thermal cameras deliver unmatched security and peace of mind. Choose the industry’s leading solutions for your thermal surveillance needs, ensuring safety and efficiency in any scenario.";
+
+const products = [
+  {
+    id: 'eureka',
+    name: 'Eureka Series',
+    image: "https://plus.unsplash.com/premium_vector-1731987428190-9ee872f5e8db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2N0dnxlbnwwfHwwfHx8MQ%3D%3D",
+    description: 'Advanced thermal imaging camera with AI-powered detection and ultra-high sensitivity.',
+    features: [
+      'High thermal sensitivity <0.035°C',
+      'Advanced fire detection algorithms',
+      'Long-range surveillance up to 2km',
+      'IP67 Weather-resistant design',
+      'Built-in deep learning analytics',
+      'Dual-spectrum imaging'
+    ],
+    specifications: {
+      resolution: '640 × 512',
+      focalLength: '75mm',
+      frameRate: '50Hz',
+      detection: 'Up to 2km',
+      sensitivity: '<0.035°C',
+      protection: 'IP67'
+    },
+    highlights: [
+      { icon: 'temperature', label: 'Ultra-High Sensitivity' },
+      { icon: 'shield', label: 'Advanced Protection' },
+      { icon: 'cpu', label: 'AI-Powered' }
+    ]
+  },
+  {
+    id: 'sentinel',
+    name: 'Sentinel Pro',
+    image: "https://plus.unsplash.com/premium_vector-1711987867917-9f139986137a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2N0dnxlbnwwfHwwfHx8MQ%3D%3D",
+    description: 'Professional-grade thermal camera with enhanced night vision capabilities.',
+    features: [
+      'Dual-lens technology',
+      'Night vision up to 500m',
+      'Smart temperature tracking',
+      'IP66 weatherproof design',
+      'Intelligent motion detection',
+      'Mobile app integration'
+    ],
+    specifications: {
+      resolution: '384 × 288',
+      focalLength: '35mm',
+      frameRate: '60Hz',
+      detection: 'Up to 500m',
+      sensitivity: '<0.05°C',
+      protection: 'IP66'
+    },
+    highlights: [
+      { icon: 'moon', label: 'Night Vision' },
+      { icon: 'mobile', label: 'Mobile Ready' },
+      { icon: 'eye', label: 'Smart Detection' }
+    ]
+  },
+  {
+    id: 'guardian',
+    name: 'Guardian Series',
+    image: "https://plus.unsplash.com/premium_vector-1723817905921-2c768188534b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2N0dnxlbnwwfHwwfHx8MQ%3D%3D",
+    description: 'Industrial thermal imaging solution for harsh environments.',
+    features: [
+      'Industrial-grade construction',
+      'Temperature range -40°C to 550°C',
+      'Explosion-proof certification',
+      'Real-time alerts',
+      'Cloud storage integration',
+      'Advanced reporting tools'
+    ],
+    specifications: {
+      resolution: '640 × 480',
+      focalLength: '50mm',
+      frameRate: '30Hz',
+      detection: 'Up to 1.5km',
+      sensitivity: '<0.04°C',
+      protection: 'IP68'
+    },
+    highlights: [
+      { icon: 'factory', label: 'Industrial Grade' },
+      { icon: 'cloud', label: 'Cloud Ready' },
+      { icon: 'bell', label: 'Smart Alerts' }
+    ]
+  },
+  {
+    id: 'fusion',
+    name: 'Fusion Elite',
+    image: "https://plus.unsplash.com/premium_vector-1736479984331-be514b1d458a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNjdHZ8ZW58MHx8MHx8fDE%3D",
+    description: 'Hybrid thermal-optical camera system with advanced fusion technology.',
+    features: [
+      'Thermal-optical fusion imaging',
+      'Auto-tracking system',
+      'Smart scene adaptation',
+      'Dual streaming capability',
+      'Advanced image enhancement',
+      'Integrated laser rangefinder'
+    ],
+    specifications: {
+      resolution: '640 × 512',
+      focalLength: '60mm',
+      frameRate: '60Hz',
+      detection: 'Up to 1.8km',
+      sensitivity: '<0.03°C',
+      protection: 'IP67'
+    },
+    highlights: [
+      { icon: 'camera', label: 'Hybrid Imaging' },
+      { icon: 'crosshair', label: 'Auto Tracking' },
+      { icon: 'zap', label: 'Smart Scene' }
+    ]
+  },
+  {
+    id: 'voyager',
+    name: 'Voyager Series',
+    image: "https://plus.unsplash.com/premium_vector-1737447074503-ba8d373d6eb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNjdHZ8ZW58MHx8MHx8fDE%3D",
+    description: 'Portable thermal imaging solution for mobile surveillance applications.',
+    features: [
+      'Compact lightweight design',
+      'Battery life up to 12 hours',
+      'Wi-Fi & Bluetooth connectivity',
+      'Built-in GPS tracking',
+      'Mobile command interface',
+      'Rapid deployment system'
+    ],
+    specifications: {
+      resolution: '384 × 288',
+      focalLength: '25mm',
+      frameRate: '50Hz',
+      detection: 'Up to 800m',
+      sensitivity: '<0.05°C',
+      protection: 'IP65'
+    },
+    highlights: [
+      { icon: 'battery', label: 'Long Battery' },
+      { icon: 'wifi', label: 'Wireless Ready' },
+      { icon: 'map', label: 'GPS Enabled' }
+    ]
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="relative h-[90vh] overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80"
+        alt="Thermal Imaging Solutions" 
+        class="w-full h-full object-cover transform scale-105 animate-slow-zoom"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-900/85 to-transparent"></div>
+      <div class="absolute inset-0 bg-[url('/src/assets/patterns/grid.svg')] opacity-10"></div>
+    </div>
+    
+    <div class="relative container mx-auto px-4 h-full flex items-center">
+      <div class="max-w-2xl text-white space-y-8">
+        <span class="inline-flex items-center px-5 py-2.5 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up">
+          <span class="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+          Advanced Thermal Technology
+        </span>
+        
+        <h1 class="text-6xl font-bold leading-tight animate-fade-in-up">
+          Thermal Imaging
+          <span class="block mt-2 bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
+            Next-Gen Detection
+          </span>
+        </h1>
+        
+        <p class="text-xl text-blue-100/90 animate-fade-in-up delay-200 max-w-xl leading-relaxed">
+          Ultra-sensitive thermal detection with AI-powered analytics for superior threat identification
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="py-24 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl font-bold mb-4">Our Solutions</h2>
+        <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
+        <p class="text-gray-600 text-lg">Advanced thermal imaging solutions for enhanced detection and monitoring</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map(product => (
+          <div class="group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 p-6">
+              <img 
+                src={product.image} 
+                alt={product.name}
+                class="w-full h-full object-contain transform group-hover:scale-105 transition-all duration-500 drop-shadow-xl"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  {product.name}
+                </h3>
+                <span class="px-4 py-1.5 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">
+                  Thermal
+                </span>
+              </div>
+              
+              <p class="text-gray-600 mb-6 line-clamp-2">{product.description}</p>
+              
+              <div class="grid grid-cols-3 gap-4 mb-8">
+                {product.highlights.map(highlight => (
+                  <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-2 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {/* Add appropriate SVG paths for each icon */}
+                      </svg>
+                    </div>
+                    <span class="text-sm text-gray-600">{highlight.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button 
+                class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3.5 rounded-xl hover:from-blue-700 hover:to-blue-800 transform hover:scale-[1.02] transition-all duration-300 shadow-md hover:shadow-xl flex items-center justify-center gap-2 font-medium product-detail-btn"
+                data-product-id={product.id}
+              >
+                Explore Features
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Component -->
+  <div id="productModal" class="fixed inset-0 bg-black/50 hidden z-50">
+    <div class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl bg-white rounded-2xl shadow-2xl">
+      <div class="relative p-6 max-h-[90vh] overflow-y-auto">
+        <!-- Close Button -->
+        <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Modal Content -->
+        <div class="space-y-6">
+          <div class="flex items-start gap-6">
+            <div class="w-1/2">
+              <img id="modalImage" src="" alt="" class="w-full rounded-lg">
+            </div>
+            <div class="w-1/2">
+              <h2 id="modalTitle" class="text-3xl font-bold text-gray-900 mb-4"></h2>
+              <p id="modalDescription" class="text-gray-600 mb-6"></p>
+              
+              <div class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-900">Key Features</h3>
+                <ul id="modalFeatures" class="list-disc list-inside text-gray-600 space-y-2"></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Technical Specifications</h3>
+            <div id="modalSpecs" class="grid grid-cols-2 gap-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Product data for client-side use
+  const products: { [key: string]: { id: string, name: string, image: string, description: string, features: string[], specifications: { [key: string]: string } } } = {
+    eureka: {
+      id: 'eureka',
+      name: 'Eureka Series',
+      image: "https://plus.unsplash.com/premium_vector-1731987428190-9ee872f5e8db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2N0dnxlbnwwfHwwfHx8MQ%3D%3D",
+      description: 'Advanced thermal imaging camera with AI-powered detection and ultra-high sensitivity.',
+      features: [
+        'High thermal sensitivity <0.035°C',
+        'Advanced fire detection algorithms',
+        'Long-range surveillance up to 2km',
+        'IP67 Weather-resistant design',
+        'Built-in deep learning analytics',
+        'Dual-spectrum imaging'
+      ],
+      specifications: {
+        resolution: '640 × 512',
+        focalLength: '75mm',
+        frameRate: '50Hz',
+        detection: 'Up to 2km',
+        sensitivity: '<0.035°C',
+        protection: 'IP67'
+      }
+    },
+    sentinel: {
+      id: 'sentinel',
+      name: 'Sentinel Pro',
+      image: "https://plus.unsplash.com/premium_vector-1711987867917-9f139986137a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2N0dnxlbnwwfHwwfHx8MQ%3D%3D",
+      description: 'Professional-grade thermal camera with enhanced night vision capabilities.',
+      features: [
+        'Dual-lens technology',
+        'Night vision up to 500m',
+        'Smart temperature tracking',
+        'IP66 weatherproof design',
+        'Intelligent motion detection',
+        'Mobile app integration'
+      ],
+      specifications: {
+        resolution: '384 × 288',
+        focalLength: '35mm',
+        frameRate: '60Hz',
+        detection: 'Up to 500m',
+        sensitivity: '<0.05°C',
+        protection: 'IP66'
+      }
+    },
+    guardian: {
+      id: 'guardian',
+      name: 'Guardian Series',
+      image: "https://plus.unsplash.com/premium_vector-1723817905921-2c768188534b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2N0dnxlbnwwfHwwfHx8MQ%3D%3D",
+      description: 'Industrial thermal imaging solution for harsh environments.',
+      features: [
+        'Industrial-grade construction',
+        'Temperature range -40°C to 550°C',
+        'Explosion-proof certification',
+        'Real-time alerts',
+        'Cloud storage integration',
+        'Advanced reporting tools'
+      ],
+      specifications: {
+        resolution: '640 × 480',
+        focalLength: '50mm',
+        frameRate: '30Hz',
+        detection: 'Up to 1.5km',
+        sensitivity: '<0.04°C',
+        protection: 'IP68'
+      }
+    },
+    fusion: {
+      id: 'fusion',
+      name: 'Fusion Elite',
+      image: "https://plus.unsplash.com/premium_vector-1736479984331-be514b1d458a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNjdHZ8ZW58MHx8MHx8fDE%3D",
+      description: 'Hybrid thermal-optical camera system with advanced fusion technology.',
+      features: [
+        'Thermal-optical fusion imaging',
+        'Auto-tracking system',
+        'Smart scene adaptation',
+        'Dual streaming capability',
+        'Advanced image enhancement',
+        'Integrated laser rangefinder'
+      ],
+      specifications: {
+        resolution: '640 × 512',
+        focalLength: '60mm',
+        frameRate: '60Hz',
+        detection: 'Up to 1.8km',
+        sensitivity: '<0.03°C',
+        protection: 'IP67'
+      }
+    },
+    voyager: {
+      id: 'voyager',
+      name: 'Voyager Series',
+      image: "https://plus.unsplash.com/premium_vector-1737447074503-ba8d373d6eb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNjdHZ8ZW58MHx8MHx8fDE%3D",
+      description: 'Portable thermal imaging solution for mobile surveillance applications.',
+      features: [
+        'Compact lightweight design',
+        'Battery life up to 12 hours',
+        'Wi-Fi & Bluetooth connectivity',
+        'Built-in GPS tracking',
+        'Mobile command interface',
+        'Rapid deployment system'
+      ],
+      specifications: {
+        resolution: '384 × 288',
+        focalLength: '25mm',
+        frameRate: '50Hz',
+        detection: 'Up to 800m',
+        sensitivity: '<0.05°C',
+        protection: 'IP65'
+      }
+    }
+  };
+
+  // Modal functionality
+  const modal = document.getElementById('productModal');
+  const modalImage = document.getElementById('modalImage') as HTMLImageElement;
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+  const modalFeatures = document.getElementById('modalFeatures');
+  const modalSpecs = document.getElementById('modalSpecs');
+
+  // Open modal
+  document.querySelectorAll('.product-detail-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const productId = (button as HTMLButtonElement).dataset.productId;
+      if (!productId) return;
+      const product = products[productId];
+
+      modalImage.src = product.image;
+      modalImage.alt = product.name;
+      if (modalTitle) {
+        modalTitle.textContent = product.name;
+      }
+      if (modalDescription) {
+        modalDescription.textContent = product.description;
+      }
+      
+      // Populate features
+      if (modalFeatures) {
+        modalFeatures.innerHTML = product.features
+          .map(feature => `<li>${feature}</li>`)
+          .join('');
+      }
+
+      // Populate specifications
+      if (modalSpecs) {
+        modalSpecs.innerHTML = Object.entries(product.specifications)
+          .map(([key, value]) => `
+            <div class="bg-gray-50 p-4 rounded">
+              <span class="text-sm text-gray-500">${key}</span>
+              <p class="font-medium text-gray-900">${value}</p>
+            </div>
+          `)
+          .join('');
+      }
+
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close modal handlers
+  const closeModal = () => {
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+    document.body.style.overflow = 'auto';
+  };
+
+  const closeModalButton = document.querySelector('.close-modal');
+  if (closeModalButton) {
+    closeModalButton.addEventListener('click', closeModal);
+  }
+  
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (modal && e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+</script>
+
+<style>
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .animate-slow-zoom {
+    animation: slowZoom 20s ease-out forwards;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+
+  /* Add glass morphism effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Modal animations */
+  #productModal {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  #productModal > div {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translate(-50%, -45%);
+    }
+    to { 
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+</style>
